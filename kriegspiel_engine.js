@@ -9431,13 +9431,14 @@ function initialiserFaction(rawFaction, provincesDeLaFaction) {
     
     if (nations_tres_fertiles.includes(rawFaction.nom)) {
         fertilite = 0.25; // Avantage de 25%
-    if (f.nom === "Alexandre Ier", "f.nom === "Pierre le Grand") {
-            f.ECONOMIE.fertilite = 0.05
-    }
     } else if (nations_peu_fertiles.includes(rawFaction.nom)) {
         fertilite = 0.10; // Malus de 10%
     }
     f.ECONOMIE.fertilite = fertilite;
+
+    if (f.nom === "Alexandre Ier" || "f.nom === "Pierre le Grand") {
+            f.ECONOMIE.fertilite = 0.05
+    }
 
     // NOUVEAU (Point 7) - Initialisation du Domaine de l'État
     const hectares_agricoles_total = (superficie_hectares * f.ECONOMIE.fertilite);
