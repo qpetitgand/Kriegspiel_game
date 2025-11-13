@@ -9431,6 +9431,9 @@ function initialiserFaction(rawFaction, provincesDeLaFaction) {
     
     if (nations_tres_fertiles.includes(rawFaction.nom)) {
         fertilite = 0.25; // Avantage de 25%
+    if (f.nom === "Alexandre Ier", "f.nom === "Pierre le Grand") {
+            f.ECONOMIE.fertilite = 0.05
+    }
     } else if (nations_peu_fertiles.includes(rawFaction.nom)) {
         fertilite = 0.10; // Malus de 10%
     }
