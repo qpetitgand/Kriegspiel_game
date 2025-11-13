@@ -9436,7 +9436,7 @@ function initialiserFaction(rawFaction, provincesDeLaFaction) {
     }
     f.ECONOMIE.fertilite = fertilite;
 
-    if (f.nom === "Alexandre Ier" || "f.nom === "Pierre le Grand") {
+    if (f.nom === "Alexandre Ier" || f.nom === "Pierre le Grand") {
             f.ECONOMIE.fertilite = 0.05
     }
 
