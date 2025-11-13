@@ -3917,7 +3917,7 @@ const FACTIONS_DATA_RAW = {
             "Navires de ligne": "90",
             "+ de 80 canons": "3",
             "80 canons": "5",
-            "74 canons": "30",
+            "74 canons": "25",
             "64 canons": "17",
             "50 canons": "35",
             "Navires de ligne actifs/armés": "41",
@@ -4027,7 +4027,7 @@ const FACTIONS_DATA_RAW = {
             "Dépenses totales": "160 509 991",
             "Recettes extraordinaires (ventes biens du roi, or trouvé, etc) ou dépenses extraordinaires": "-4 000 000",
             "Coût maison du roi": "6 190 000",
-            "Trésor": "7 566 206",
+            "Trésor": "10 566 206",
             "Dette": "0",
             "Excédent": "10 666 206",
             "Dette ou excédent en pourcentage des recettes": "6,09 %",
@@ -4136,8 +4136,8 @@ const FACTIONS_DATA_RAW = {
             "Soldats dans une division": "3 000,0",
             "Sous-officiers et caporaux (Division)": "540,0",
             "Division sur pied de guerre": "5 040,0",
-            "Nombre de Régiments de ligne": "13,0",
-            "Régiments de grenadiers": "2,5",
+            "Nombre de Régiments de ligne": "10,0",
+            "Régiments de grenadiers": "2",
             "Régiments de génie": "1,0",
             "Régiments d’infanterie légère": "2,0",
             "Nombre de régiments": "17,5",
@@ -4300,8 +4300,8 @@ const FACTIONS_DATA_RAW = {
             "Taxe industrie": "3 163 610",
             "Nombre de manufactures d’armes ou arsenaux": "10",
             "Ouvriers": "1 070",
-            "Reste après besoin en fusils (dans l’armée et marine)": "37 118",
-            "Fusils (dans l'armée ou en réserve)": "37 118",
+            "Reste après besoin en fusils (dans l’armée et marine)": "7 118",
+            "Fusils (dans l'armée ou en réserve)": "7 118",
             "Besoin de canons navals": "758",
             "Réserve de canons navals": "-571",
             "Superficie du territoire en forêt": "20,87 %",
@@ -4328,7 +4328,7 @@ const FACTIONS_DATA_RAW = {
             "Recettes totales Pays": "110 741 135",
             "Dépenses totales": "107 635 450",
             "Coût maison du roi": "4 556 000",
-            "Trésor": "7 105 685",
+            "Trésor": "8 105 685",
             "Dette": "0",
             "Excédent": "3 105 685",
             "Dette ou excédent en pourcentage des recettes": "2,80 %",
@@ -4622,7 +4622,7 @@ const FACTIONS_DATA_RAW = {
             "Commerce estimé en livres tournois": "12 377 368",
             "Taxes": "1 237 737",
             "Droits de mouillage": "6 254 250",
-            "Manufactures (textiles verreries imprimeries etc)": "37",
+            "Manufactures (textiles verreries imprimeries etc)": "47",
             "Production de fer (T)": "22 450",
             "Production de Fonte (T)": "1 580",
             "Production de cuivre (quintaux)": "3 580",
@@ -4633,7 +4633,7 @@ const FACTIONS_DATA_RAW = {
             "Production de poudre (T)": "90 000",
             "Industrie production en valeur": "37 544 500",
             "Taxe industrie": "3 971 616",
-            "Nombre de manufactures d’armes ou arsenaux": "9",
+            "Nombre de manufactures d’armes ou arsenaux": "13",
             "Ouvriers": "1 845",
             "Reste après besoin en fusils (dans l’armée et marine)": "12 353",
             "Fusils (dans l'armée ou en réserve)": "12 353",
@@ -4919,16 +4919,16 @@ const FACTIONS_DATA_RAW = {
             "Grand commerce (+ 200 tonneaux)": "7",
             "Sucre (en Kg)": "8 623 000",
             "Café (Kg)": "4 561 000",
-            "Epices (en Kg)": "734 620",
+            "Epices (en Kg)": "934 620",
             "Fourrures (en pièces)": "3 620",
-            "Tabac (en kg)": "2 480 000",
+            "Tabac (en kg)": "4 480 000",
             "Coton (en kg)": "866 700",
             "Indigo (en kg)": "1 547 000",
             "Thé (en Kg)": "52 345",
             "Commerce estimé en livres tournois": "107 255 507",
             "Taxes": "8 937 959",
             "Droits de mouillage": "12 667 825",
-            "Manufactures (textiles verreries imprimeries etc)": "17",
+            "Manufactures (textiles verreries imprimeries etc)": "37",
             "Production de fer (T)": "2 100",
             "Production de Fonte (T)": "0",
             "Production de cuivre (quintaux)": "9 140",
@@ -4970,7 +4970,7 @@ const FACTIONS_DATA_RAW = {
             "Dépenses totales": "97 902 618",
             "Recettes extraordinaires (ventes biens du roi, or trouvé, etc) ou dépenses extraordinaires": "4 000 000",
             "Coût maison du roi": "9 270 000",
-            "Trésor": "2 737 713",
+            "Trésor": "12 737 713",
             "Dette": "0",
             "Excédent": "3 737 713",
             "Dette ou excédent en pourcentage des recettes": "3,83 %",
@@ -5856,14 +5856,14 @@ const FACTIONS_DATA_RAW = {
 "Malborough": {
         "nom": "Malborough",
         "RAW_DATA": {
-            "Population": "8 780 000",
+            "Population": "9 780 000",
             "Population des colonies": "607 400",
             "Dont colons blancs": "305 600",
             "Indigènes": "185 800",
             "Esclaves": "116 000",
-            "Total population métropolitaine": "8 780 000",
+            "Total population métropolitaine": "9 780 000",
             "Superficie métropole (km²)": "281 410",
-            "Densité de population": "31,20",
+            "Densité de population": "34.75",
             "Recettes fiscales (en livres tournois)": "211 460 950",
             "Impôts directs": "65 182 528",
             "Impôt foncier": "50 099 778",
@@ -5975,7 +5975,7 @@ const FACTIONS_DATA_RAW = {
             "Achat chevaux": "-6 235 548",
             "Forteresses": "19",
             "Forteresses 2e classe": "3",
-            "Forteresses 3e et 4e classe": "16",
+            "Forteresses 3e et 4e classe": "11",
             "Forteresses de 4e classe ( 500 à 1300 hommes)": "8",
             "Forts – Poste militaire": "6",
             "Nombre de casernes (1 caserne = 250 logements)": "164",
@@ -6025,18 +6025,18 @@ const FACTIONS_DATA_RAW = {
             "Marins encore disponibles": "2 377",
             "Navires de ligne": "103",
             "+ de 80 canons": "3",
-            "80 canons": "5",
-            "74 canons": "17",
+            "80 canons": "2",
+            "74 canons": "14",
             "64 canons": "24",
-            "50 canons": "18",
+            "50 canons": "24",
             "Navires de ligne actifs/armés": "26",
             "80 canons (Actifs)": "2",
             "74 canons (Actifs)": "16",
             "64 canons (Actifs)": "8",
             "Navires d’escortes": "221",
             "Frégates": "57",
-            "Corvettes-Brig-Sloops-chébeqs": "50",
-            "Sloops-Goelettes-shooners": "40",
+            "Corvettes-Brig-Sloops-chébeqs": "30",
+            "Sloops-Goelettes-shooners": "29",
             "Navires d’escortes actifs": "94",
             "Frégates (Actifs)": "28",
             "Corvettes- (Actifs)": "37",
@@ -6061,7 +6061,7 @@ const FACTIONS_DATA_RAW = {
             "Frégates ou navires d’escorte en radoub": "3",
             "Bâtiments de la Marine": "32",
             "Nombre de grands arsenaux maritimes": "4",
-            "Petits arsenaux": "4",
+            "Petits arsenaux": "3",
             "Cales de radoubs (pour vaisseaux)": "8",
             "Nombre d’ouvriers": "15 800",
             "Coût construction navires": "15 590 000",
@@ -6073,7 +6073,7 @@ const FACTIONS_DATA_RAW = {
             "Constructions forts colonies": "2",
             "Navires de pêche": "909",
             "Navires marchands totaux": "2 496",
-            "Cabotage (5 à 50 tonneaux)": "905",
+            "Cabotage (5 à 50 tonneaux)": "985",
             "Grand cabotage (50-100 tonneaux)": "749",
             "Commerce de haute mer (100-250 tonneaux)": "568",
             "Grand commerce (+ 250 tonneaux)": "274",
@@ -6086,10 +6086,10 @@ const FACTIONS_DATA_RAW = {
             "Café (Kg)": "808 200",
             "Epices (en Kg)": "353 400",
             "Fourrures (en pièces)": "19 850",
-            "Tabac (en kg)": "653 400",
+            "Tabac (en kg)": "2 653 400",
             "Coton (en kg)": "234 000",
             "Indigo (en kg)": "254 000",
-            "Thé (en Kg)": "804 700",
+            "Thé (en Kg)": "1 804 700",
             "Commerce estimé en livres tournois": "188 451 706",
             "Taxes": "18 845 171",
             "Droits de mouillage": "27 685 875",
@@ -6108,7 +6108,7 @@ const FACTIONS_DATA_RAW = {
             "Reste après besoin en fusils (dans l’armée et marine)": "96 465",
             "Fusils (dans l'armée ou en réserve)": "96 465",
             "Besoin de canons navals": "834",
-            "Réserve de canons navals": "-497",
+            "Réserve de canons navals": "-7",
             "Superficie du territoire en forêt": "18,30 %",
             "Production bois (Mcube)": "7 754 000",
             "Consommation de bois": "8 924 500",
@@ -6145,8 +6145,8 @@ const FACTIONS_DATA_RAW = {
         "nom": "Henri IV",
         "RAW_DATA": {
             "Population": "19 100 000",
-            "Population des colonies": "4 310",
-            "Dont colons blancs": "1 810",
+            "Population des colonies": "5 310",
+            "Dont colons blancs": "2 510",
             "Indigènes": "3 400",
             "Esclaves": "100",
             "Total population métropolitaine": "19 100 000",
@@ -6272,7 +6272,7 @@ const FACTIONS_DATA_RAW = {
             "Forteresses": "69",
             "Forteresses 1ère classe": "2",
             "Forteresses 2e classe": "9",
-            "Forteresses 3e et 4e classe": "45",
+            "Forteresses 3e et 4e classe": "35",
             "Forteresses de 4e classe ( 500 à 1300 hommes)": "43",
             "Forts – Poste militaire": "37",
             "Construction de places de premier rang": "1",
@@ -6425,7 +6425,7 @@ const FACTIONS_DATA_RAW = {
             "Dépenses totales": "114 445 753",
             "Recettes extraordinaires (ventes biens du roi, or trouvé, etc) ou dépenses extraordinaires": "8 000 000",
             "Coût maison du roi": "8 359 000",
-            "Trésor": "8 442 138",
+            "Trésor": "10 442 138",
             "Dette": "0",
             "Excédent": "31 442 138",
             "Dette ou excédent en pourcentage des recettes": "21,55 %",
@@ -6691,14 +6691,14 @@ const FACTIONS_DATA_RAW = {
 "Louis II Condé": {
         "nom": "Louis II Condé",
         "RAW_DATA": {
-            "Population": "11 220 500",
+            "Population": "12 220 500",
             "Population des colonies": "236 390",
             "Dont colons blancs": "117 340",
             "Indigènes": "100 320",
             "Esclaves": "18 730",
             "Total population métropolitaine": "11 220 500",
             "Superficie métropole (km²)": "805 830",
-            "Densité de population": "13,92",
+            "Densité de population": "15.17",
             "Recettes fiscales (en livres tournois)": "147 837 578",
             "Impôts directs": "36 059 140",
             "Impôt foncier": "14 145 404",
@@ -6941,7 +6941,7 @@ const FACTIONS_DATA_RAW = {
             "Sucre (en Kg)": "1 434 500",
             "Café (Kg)": "231 000",
             "Tabac (en kg)": "505 800",
-            "Coton (en kg)": "458 000",
+            "Coton (en kg)": "1 458 000",
             "Indigo (en kg)": "294 500",
             "Thé (en Kg)": "402 000",
             "Commerce estimé en livres tournois": "105 707 811",
@@ -7500,7 +7500,7 @@ const GAME_SETTINGS = {
     HECTARES_PAR_COLON: 5,
     COUT_COLON_BASE: 400, // Coût d'envoi et d'installation
     COUT_EXPLORATION_COLONIALE: 1000000, // Coût pour trouver de nouvelles terres
-    TERRES_PAR_EXPLORATION: 2000000, // Hectares découverts
+    TERRES_PAR_EXPLORATION: 5000000, // Hectares découverts
     CROISSANCE_MARCHANDS_BASE: 0.02, // 2% par an
     PUISSANCE_COMMERCIALE: {
         "5-50t": 20000,
@@ -7552,8 +7552,8 @@ const GAME_SETTINGS = {
         ration_jour: 0.125 // 0.125 LT par soldat par jour
     },
     COUTS_ENTRETIEN_FORTERESSES: { 
-        'classe_1': 500000, 
-        'classe_2': 195000, 
+        'classe_1': 570000, 
+        'classe_2': 197000, 
         'classe_3_4': 55000, 
         'fort': 4500 
     },
@@ -7565,7 +7565,7 @@ const GAME_SETTINGS = {
     ENTRETIEN_CASERNES_RATIO: 0.05, // 1/20e du coût de construction des forteresses
     // NOUVEAU (Point 10)
     COUT_KM_ROUTE: 5000, // Basé sur la définition de 'route_royale'
-    ENTRETIEN_ROUTE_RATIO: 0.10 // 1/10e du coût d'achat
+    ENTRETIEN_ROUTE_RATIO: 0.15 // 15% du coût d'achat
 };
 
 // NOUVEAU (Point 3 & 4) : Coûts et besoins de l'artillerie
@@ -7621,7 +7621,7 @@ const GAME_PRICES = {
     "sucre_kg": 4.95,
     "cafe_kg": 1.85,
     "epices_kg": 11.45,
-    "tabac_kg": 1.15,
+    "tabac_kg": 1.95,
     "coton_kg": 1.5,
     "indigo_kg": 1.5,
     "the_kg": 3.85,
@@ -7688,8 +7688,8 @@ const AGRICULTURE_SETTINGS = {
 const FACTION_ALLOCATIONS_TERRES = {
     // --- PROFIL FRANÇAIS (Vignes/Élevage équilibré) ---
     // Total: 0.28+0.10+0.05+0.03 + 0.25+0.02 + 0.05+0.05 + 0.05+0.10+0.02 = 1.0
-    "Napoléon":         { ble: 0.33, orge: 0.05, avoine: 0.05, lin_chanvre: 0.03, vignes: 0.25, houblon: 0.02, pomme_de_terre: 0.03, legumes_fruits: 0.05, betail: 0.07, moutons: 0.10, porcins: 0.02, olives: 0.0 },
-    "Lannes":           { ble: 0.33, orge: 0.05, avoine: 0.05, lin_chanvre: 0.03, vignes: 0.25, houblon: 0.02, pomme_de_terre: 0.05, legumes_fruits: 0.05, betail: 0.05, moutons: 0.10, porcins: 0.02, olives: 0.0 },
+    "Napoléon":         { ble: 0.33, orge: 0.03, avoine: 0.05, lin_chanvre: 0.03, vignes: 0.25, houblon: 0.02, pomme_de_terre: 0.03, legumes_fruits: 0.05, betail: 0.07, moutons: 0.10, porcins: 0.02, olives: 0.02 },
+    "Lannes":           { ble: 0.33, orge: 0.05, avoine: 0.05, lin_chanvre: 0.03, vignes: 0.21, houblon: 0.02, pomme_de_terre: 0.05, legumes_fruits: 0.05, betail: 0.05, moutons: 0.10, porcins: 0.02, olives: 0.04 },
     "Davout":           { ble: 0.33, orge: 0.05, avoine: 0.05, lin_chanvre: 0.03, vignes: 0.25, houblon: 0.02, pomme_de_terre: 0.05, legumes_fruits: 0.05, betail: 0.05, moutons: 0.10, porcins: 0.02, olives: 0.0 },
     "Philippe d’Orléans":{ ble: 0.33, orge: 0.05, avoine: 0.05, lin_chanvre: 0.03, vignes: 0.25, houblon: 0.02, pomme_de_terre: 0.05, legumes_fruits: 0.05, betail: 0.05, moutons: 0.10, porcins: 0.02, olives: 0.0 },
     "Louis XIV":        { ble: 0.33, orge: 0.05, avoine: 0.05, lin_chanvre: 0.03, vignes: 0.25, houblon: 0.02, pomme_de_terre: 0.05, legumes_fruits: 0.05, betail: 0.05, moutons: 0.10, porcins: 0.02, olives: 0.0 },
@@ -7735,7 +7735,7 @@ const FACTION_ALLOCATIONS_TERRES = {
         ble: 0.35, orge: 0.10, avoine: 0.15, lin_chanvre: 0.03, vignes: 0.0, houblon: 0.01, pomme_de_terre: 0.15, legumes_fruits: 0.01, betail: 0.10, moutons: 0.05, porcins: 0.05, olives: 0.0
     },
     "Gaston de Foix": { // Italie/Navarre (Olives)
-        ble: 0.20, orge: 0.10, avoine: 0.05, lin_chanvre: 0.02, vignes: 0.30, houblon: 0.0, pomme_de_terre: 0.03, legumes_fruits: 0.05, betail: 0.10, moutons: 0.10, porcins: 0.02, olives: 0.03
+        ble: 0.28, orge: 0.02, avoine: 0.05, lin_chanvre: 0.02, vignes: 0.25, houblon: 0.0, pomme_de_terre: 0.03, legumes_fruits: 0.05, betail: 0.10, moutons: 0.10, porcins: 0.02, olives: 0.08
     },
     "Poniatowski": { // Pologne (Céréales/Élevage)
         ble: 0.40, orge: 0.10, avoine: 0.15, lin_chanvre: 0.03, vignes: 0.0, houblon: 0.01, pomme_de_terre: 0.10, legumes_fruits: 0.01, betail: 0.10, moutons: 0.05, porcins: 0.05, olives: 0.0
@@ -8543,7 +8543,7 @@ function initialiserFaction(rawFaction, provincesDeLaFaction) {
                 rnb_ratio: 0.35 // 35% du RNB
             },
             bas: { 
-                taux: 0.01, // Taux de base 1%
+                taux: 0.025, // Taux de base 2.5%
                 pop_ratio: 0.78, // 78% de la pop
                 rnb_ratio: 0.30 // 30% du RNB
             }
@@ -8989,13 +8989,13 @@ function initialiserFaction(rawFaction, provincesDeLaFaction) {
                 laine: 10000,
                 lin_chanvre: 10000,
                 ble_colonial: 0,
-                charbon: 500,
+                charbon: 2000,
                 machines_agri: 0,
                 moteurs_vapeur: 0,
                 sel: 5000,
                 suif: 1000,
                 cuir: 1000,
-                olives: 0,
+                olives: 5000,
                 habits: 5000,
                 biere: 1000,
                 vin: 1000,
@@ -9013,7 +9013,7 @@ function initialiserFaction(rawFaction, provincesDeLaFaction) {
                 voiles: 100,
                 cordages: 100,
                 outils_agricoles: 0,
-                poisson: 0,
+                poisson: 5000,
                 cachemire: 0,
                 huile_olive: 100,
                 chevaux: 0, // (NOUVEAU Point 10/11 - Stock pour le marché)
@@ -9300,7 +9300,7 @@ function initialiserFaction(rawFaction, provincesDeLaFaction) {
         
 
     } else if (f.nom === "Frédéric II") {
-        for(let i=0; i < 1; i++) f.INFRASTRUCTURE.mines.push({ type: "mine_fer_p" });
+        for(let i=0; i < 2; i++) f.INFRASTRUCTURE.mines.push({ type: "mine_fer_p" });
         for(let i=0; i < 2; i++) f.INFRASTRUCTURE.manufactures_civiles.push({ type: "brasserie_p" });
         for(let i=0; i < 1; i++) f.INFRASTRUCTURE.manufactures_avancees.push({ type: "atelier_outils_p" });
     
@@ -9322,6 +9322,17 @@ function initialiserFaction(rawFaction, provincesDeLaFaction) {
     else if (f.nom === "Louis XIII") {
         for(let i=0; i < 2; i++) f.INFRASTRUCTURE.manufactures_luxe.push({ type: "soierie_p" });
         for(let i=0; i < 2; i++) f.INFRASTRUCTURE.manufactures_civiles.push({ type: "brasserie_p" });
+    }
+    else if (f.nom === "Charles XII") {
+        for(let i=0; i < 10; i++) f.INFRASTRUCTURE.mines.push({ type: "mine_cuivre_p" });
+        for(let i=0; i < 7; i++) f.INFRASTRUCTURE.mines.push({ type: "mine_fer_p" });
+        for(let i=0; i < 3; i++) f.INFRASTRUCTURE.mines.push({ type: "mine_charbon_p" });
+    }
+     else if (f.nom === "Philippe d'Orléans") {
+        for(let i=0; i < 5; i++) f.INFRASTRUCTURE.manufactures_luxe.push({ type: "soierie_p" });
+        for(let i=0; i < 2; i++) f.INFRASTRUCTURE.manufactures_civiles.push({ type: "brasserie_p" });
+        for(let i=0; i < 2; i++) f.INFRASTRUCTURE.banques.push({ type: "banque_nationale_p" });
+
     }
     
     // --- FIN BÂTIMENTS DE DÉPART ---
