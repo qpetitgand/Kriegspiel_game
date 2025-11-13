@@ -1,0 +1,416 @@
+/* Réinitialisation de base */
+* { box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Header --- */
+header {
+    background-color: #1a233a;
+    color: white;
+    padding: 15px 25px;
+    border-bottom: 3px solid #007bff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header h1 { margin: 0; font-size: 1.5em; }
+.header-left { display: flex; align-items: center; gap: 20px; }
+.header-mid { display: flex; gap: 30px; }
+.header-right {}
+
+header select {
+    width: 250px;
+    color: #333;
+    background-color: #f0f2f5;
+    border-radius: 4px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+.stat-simple {
+    text-align: center;
+}
+.stat-simple span {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    color: #ccc;
+}
+.stat-simple strong {
+    display: block;
+    font-size: 1.3em;
+}
+
+/* --- Layout Principal --- */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    flex-grow: 1;
+}
+.column-main {
+    flex: 2;
+    min-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.column-data {
+    flex: 3;
+    min-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 0; /* Les onglets et le contenu doivent être collés */
+}
+
+/* --- Cartes (Sections) --- */
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+.card > h2:first-child { margin-top: 0; }
+h2 {
+    color: #1a233a;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 8px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+}
+h3 {
+    font-size: 1.1em;
+    margin-top: 20px;
+    color: #1a233a;
+    margin-bottom: 10px;
+}
+/* NOUVEAU (utilisé dans l'HTML) */
+h4 {
+    font-size: 1.0em;
+    margin-top: 15px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* --- Grilles de Statut --- */
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 15px;
+}
+.stat-grid div {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #eee;
+}
+.stat-grid strong {
+    display: block;
+    font-size: 1.6em;
+    margin-top: 5px;
+}
+/* Couleurs de statut */
+strong.positive { color: #28a745; }
+strong.negative { color: #dc3545; }
+strong.neutral { color: #004d40; }
+
+/* --- Contrôles (Boutons, Inputs) --- */
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease;
+    margin-top: 10px;
+    width: auto;
+}
+button:hover { background-color: #0056b3; }
+button.btn-danger { background-color: #dc3545; }
+button.btn-danger:hover { background-color: #c82333; }
+button:disabled { background-color: #aaa; cursor: not-allowed; }
+
+select, input[type="number"], input[type="text"] {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+.control-group { margin-bottom: 15px; }
+.control-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+.control-group p { font-size: 0.85em; color: #666; margin-top: 5px; }
+
+/* Grilles d'action */
+.action-grid-small {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    align-items: end;
+    margin-bottom: 10px;
+}
+.action-grid-small button { height: 38px; padding: 8px; margin-top: 0; width: 100%;}
+
+/* --- Tableaux de Données --- */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+.data-table th, .data-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    vertical-align: middle;
+}
+.data-table th {
+    background-color: #e9ecef;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    color: #555;
+}
+.data-table tr:nth-child(even) td { background-color: #f8f9fa; }
+.data-table input[type="number"] {
+    width: 80px;
+    margin-bottom: 0;
+    padding: 5px;
+}
+.data-table .data-key { font-weight: bold; }
+.data-table .data-value { font-family: monospace; font-size: 1.1em; }
+/* Style pour les boutons d'action dans les tableaux */
+.data-table button {
+    padding: 6px 10px;
+    font-size: 0.85em;
+    margin-top: 0;
+}
+
+/* --- Log / Rapport (Footer) --- */
+footer {
+    padding: 0 20px 20px 20px;
+}
+footer .card {
+    padding: 0;
+    overflow: hidden;
+}
+footer h2 {
+    padding: 20px;
+    margin: 0;
+}
+#game-log {
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: #fafafa;
+    padding: 0 20px 20px 20px;
+}
+#game-log p {
+    margin: 0 0 10px 0;
+    border-bottom: 1px dashed #ddd;
+    padding-bottom: 10px;
+    font-size: 0.95em;
+}
+#game-log p:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+/* --- Modal (Popup) --- */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.modal-content {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.modal-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+/* --- Système d'Onglets --- */
+.tabs {
+    overflow: hidden;
+    background-color: white;
+    border-radius: 8px 8px 0 0;
+    border-bottom: 2px solid #007bff;
+    display: flex;
+    flex-wrap: wrap; /* Permet aux onglets de passer à la ligne */
+}
+.tabs button {
+    background-color: inherit;
+    color: #007bff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 1em; /* Taille de police standard pour les onglets */
+    width: auto;
+    margin-top: 0;
+    border-radius: 5px 5px 0 0;
+    font-weight: bold;
+    /* CHANGEMENT: Réduire la taille de police si trop d'onglets */
+    font-size: 0.9em; /* Légère réduction pour tout faire tenir */
+    padding: 12px 10px; /* Réduire le padding */
+}
+.tabs button:hover { background-color: #e0e0e0; }
+.tabs button.active {
+    background-color: #007bff;
+    color: white;
+}
+.tab-content {
+    display: none;
+    animation: fadeEffect 0.5s;
+    border-radius: 0 0 8px 8px;
+    border: 1px solid #ddd;
+    border-top: none;
+}
+.tab-content .card {
+    border-radius: 0 0 8px 8px;
+    box-shadow: none;
+    border: none;
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* --- Tableaux pliables (Point 3) --- */
+.collapsible-section summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #1a233a;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+.collapsible-section[open] summary {
+    color: #007bff;
+}
+
+/* --- Tableau simple pour la population coloniale (Point 1) --- */
+.collapsible-section-simple summary {
+    cursor: pointer;
+    /* MODIFIÉ : Style pour les sous-titres (ex: Villes Moyennes) */
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #444;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    display: block; /* S'assure qu'il prend toute la largeur */
+}
+.data-table-simple {
+    margin-top: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    width: 100%;
+}
+.data-table-simple td {
+    padding: 6px 12px;
+}
+.data-table-simple tr td:first-child {
+    font-weight: bold;
+    color: #555;
+}
+
+/* Couleurs de log */
+.log-info { color: #333; }
+.log-success { color: #28a745; }
+.log-error { color: #dc3545; 
+}
+
+/* =======================================================
+   STYLE DES INFOBULLES (TOOLTIPS)
+   ======================================================= */
+
+/* Le conteneur qui déclenche l'infobulle (un bouton, un texte, etc.) */
+.tooltip-container {
+  position: relative;
+  display: inline-block; /* Permet de l'appliquer à des boutons ou du texte */
+  /* Optionnel : ajoute un petit pointillé pour montrer que c'est interactif */
+  /* border-bottom: 1px dotted #007bff; */
+  /* cursor: help; */
+}
+
+/* Le texte de l'infobulle (caché par défaut) */
+.tooltip-container .tooltip-text {
+  visibility: hidden;
+  width: 280px; /* Largeur de l'infobulle */
+  background-color: #333; /* Fond sombre */
+  color: #fff; /* Texte blanc */
+  text-align: left; /* Aligne le texte à gauche */
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 0.9em;
+  
+  /* Positionnement au-dessus de l'élément */
+  position: absolute;
+  z-index: 10;
+  bottom: 125%; /* Se place au-dessus */
+  left: 50%;
+  margin-left: -140px; /* La moitié de la largeur (width) pour centrer */
+
+  /* Effet de fondu (fade-in) */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* (Optionnel) La petite flèche en bas */
+.tooltip-container .tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* En bas de l'infobulle */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent; /* Flèche qui pointe vers le bas */
+}
+
+/* Affiche l'infobulle au survol */
+.tooltip-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}

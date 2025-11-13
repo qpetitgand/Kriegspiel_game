@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kriegspiel Engine - V.Systémique</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="modal-tax" class="modal-backdrop" style="display: none;">
+        <div class="modal-content">
+            <h2>Créer un Nouvel Impôt</h2>
+            <div class="control-group">
+                <label for="tax-name-input">Nom de l'impôt</label>
+                <input type="text" id="tax-name-input" placeholder="Ex: Capitation, Taxe sur le sel...">
+            </div>
+            <div class="control-group">
+                <label for="tax-type-select">Type d'impôt</label>
+                <select id="tax-type-select" onchange="toggleTaxOptions(this.value)">
+                    <option value="">-- Choisir --</option>
+                    <option value="direct">Impôt Direct (basé sur le RNB)</option>
+                    <option value="indirect">Impôt Indirect (par Habitant)</option>
+                </select>
+            </div>
+            <div id="tax-option-direct" style="display: none;">
+                <label for="tax-rate-input">Taux de prélèvement (en %, ex: 0.5 pour 0.5%)</label>
+                <input type="number" id="tax-rate-input" value="0.5" min="0" max="10" step="0.1">
+            </div>
+            <div id="tax-option-indirect" style="display: none;">
+                <label for="tax-yield-input">Rendement par habitant (en Livres)</label>
+                <input type="number" id="tax-yield-input" value="1" min="0">
+            </div>
+            <div class="modal-actions">
+                <button onclick="promulguerImpot()">Promulguer l'Impôt</button>
+                <button onclick="toggleModal('modal-tax', false)" class="btn-danger">Annuler</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-build" class="modal-backdrop" style="display: none;">
+        <div class="modal-content">
+            <h2 id="modal-build-title">Construire</h2>
+            <div class="control-group">
+                <label for="build-type-select">Type de Bâtiment</label>
+                <select id="build-type-select"></select>
+            </div>
+            <div class="control-group">
+                <label for="build-quantity-input">Quantité</label>
+                <input type="number" id="build-quantity-input" value="1" min="1" max="10">
+            </div>
+            <div id="modal-build-cost">Coût: ...</div>
+            <div class="modal-actions">
+                <button onclick="lancerConstruction()">Construire</button>
+                <button onclick="toggleModal('modal-build', false)" class="btn-danger">Annuler</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="modal-city-manage" class="modal-backdrop" style="display: none;">
+        <div class="modal-content">
+            <h2 id="modal-city-title">Gérer la Ville</h2>
+            <p>Population : <span id="modal-city-pop">0</span></p>
+            <div class="control-group">
+                <label for="city-project-select">Projets d'Amélioration</label>
+                <select id="city-project-select">
+                    </select>
+            </div>
+            <div class="modal-actions">
+            <button id="modal-city-manage-btn" onclick="lancerProjetUrbain()">Lancer le Projet</button>                
+            <button onclick="toggleModal('modal-city-manage', false)" class="btn-danger">Fermer</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="modal-officer-train" class="modal-backdrop" style="display: none;">
+        <div class="modal-content">
+            <h2>Former des Lieutenants</h2>
+            <p>Les Écoles Militaires forment des lieutenants pour votre pool de réserve. Coût par officier : <strong id="officer-train-cost">1800 LT</strong>. Temps : <strong id="officer-train-time">2 ans</strong>.</p>
+            <div class="control-group">
+                <label for="officer-train-quantity">Quantité à former</label>
+                <input type="number" id="officer-train-quantity" value="10" min="1" oninput="updateOfficerTrainCost()">
+            </div>
+            <p id="officer-train-summary">Coût total : 18 000 LT (9 000 LT/an)</p>
+            <div class="modal-actions">
+                <button onclick="lancerFormationOfficiers()">Lancer la Promotion</button>
+                <button onclick="toggleModal('modal-officer-train', false)" class="btn-danger">Annuler</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-transfert-colonie" class="modal-backdrop" style="display: none;">
+        <div class="modal-content">
+            <h2 id="modal-transfert-title">Transférer vers...</h2>
+            
+            <h4>Population de la "Campagne" (Disponible)</h4>
+            <ul style="list-style: none; padding-left: 0;">
+                <li>Colons: <strong id="transfert-pool-colons">0</strong></li>
+                <li>Indigènes: <strong id="transfert-pool-indigenes">0</strong></li>
+                <li>Esclaves: <strong id="transfert-pool-esclaves">0</strong></li>
+            </ul>
+            
+            <h4>Quantités à transférer VERS la ville :</h4>
+            <div class="control-group">
+                <label for="transfert-colons-input">Colons</label>
+                <input type="number" id="transfert-colons-input" value="0" min="0">
+            </div>
+            <div class="control-group">
+                <label for="transfert-esclaves-input">Esclaves</label>
+                <input type="number" id="transfert-esclaves-input" value="0" min="0">
+            </div>
+            <div class="control-group">
+                <label for="transfert-indigenes-input">Indigènes</label>
+                <input type="number" id="transfert-indigenes-input" value="0" min="0">
+            </div>
+
+            <div class="modal-actions">
+                <button onclick="transfererRessourcesColonie()">Transférer</button>
+                <button onclick="toggleModal('modal-transfert-colonie', false)" class="btn-danger">Annuler</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-army-manage" class="modal-backdrop" style="display: none;">
+        <div class="modal-content" style="max-width: 700px;">
+            <h2 id="modal-army-title">Gérer l'Armée</h2>
+            
+            <div class="stat-grid" style="grid-template-columns: 1fr 1fr 1fr 1fr;">
+                <div>Localisation <strong id="modal-army-location">...</strong></div>
+                <div>Statut <strong id="modal-army-status" class="neutral">...</strong></div>
+                <div>Régiments <strong id="modal-army-reg-count">0</strong></div>
+                <div>Puissance <strong id="modal-army-power" class="neutral">0</strong></div>
+            </div>
+
+            <h4>Actions de Mouvement (Point 5)</h4>
+            <div class="action-grid-small" style="grid-template-columns: 3fr 1fr;">
+                <div class="control-group">
+                    <label for="modal-army-move-select">Déplacer vers (Provinces Voisines)</label>
+                    <select id="modal-army-move-select">
+                        </select>
+                </div>
+                <button onclick="deplacerArmee()">Déplacer</button>
+            </div>
+
+            <h4>Autres Actions</h4>
+            <div class="action-grid-small" style="grid-template-columns: 1fr 1fr;">
+                <button onclick="changerStatutArmee()">Changer Statut (Défense/Invasion)</button>
+                <button onclick="alert('Fonctionnalité de transfert à venir.')">Transférer Régiments</button>
+            </div>
+
+            <h4>Régiments Assignés</h4>
+            <table class="data-table">
+                <thead><tr><th>Nom</th><th>Type</th><th>Effectif</th></tr></thead>
+                <tbody id="modal-army-reg-list">
+                    </tbody>
+            </table>
+            
+            <div class="modal-actions">
+                <button onclick="toggleModal('modal-army-manage', false)" class="btn-danger">Fermer</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-province-info" class="modal-backdrop" style="display: none;">
+        <div class="modal-content">
+            <h2 id="modal-province-title">...</h2>
+            
+            <div class="stat-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+                <div>Propriétaire <strong id="modal-province-owner">...</strong></div>
+                <div>Superficie <strong id="modal-province-size">...</strong></div>
+                <div>Instabilité <strong id="modal-province-unrest" class="neutral">...</strong></div>
+            </div>
+
+            <h4>Forteresses</h4>
+            <table class="data-table-simple">
+                <tbody id="modal-province-forts">
+                    </tbody>
+            </table>
+
+            <h4>Armées Présentes</h4>
+            <ul id="modal-province-armies">
+                </ul>
+            
+            <div class="modal-actions">
+                <button onclick="toggleModal('modal-province-info', false)" class="btn-danger">Fermer</button>
+            </div>
+        </div>
+    </div>
+    
+    <header>
+        <div class="header-left">
+            <h1>Kriegspiel Systémique</h1>
+            <select id="faction-selector" onchange="changerFaction(this.value)"></select>
+        </div>
+        <div class="header-mid">
+            <div class="stat-simple">
+                <span>Trésor</span>
+                <strong id="header-tresor" class="positive">0 LT</strong>
+            </div>
+            <div class="stat-simple">
+                <span>Population Totale</span>
+                <strong id="header-population">0</strong>
+            </div>
+            <div class="stat-simple">
+                <span>Année</span>
+                <strong id="header-annee">1 / 25</strong>
+            </div>
+        </div>
+        <div class="header-right">
+            <button onclick="prochainTour()">Prochain Tour (1 An)</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="column-main">
+            <div class="card">
+                <h2>Statut Global</h2>
+                <div class="stat-grid">
+                    <div id="stat-confiance">Confiance Pop. <strong class="positive">100%</strong></div>
+                    <div id="stat-efficacite">Efficacité Admin. <strong class="positive">100%</strong></div>
+                    <div id="stat-moral-armee">Moral Armée <strong class="positive">100%</strong></div>
+                    <div id="stat-prestige">Prestige <strong class="neutral">100</strong></div>
+                </div>
+            </div>
+            
+            <div class="card" style="position: relative;">
+                <h2>Carte des Opérations</h2>
+                
+                <div id="interactive-map-container">
+                    <p style="text-align: center; color: #888;">Chargement de la carte des provinces...</p>
+                    <img src="Carte Kriegspiel.jpg" alt="Carte Principale" style="width:100%; opacity: 0.3;">
+                </div>
+                
+                <div id="province-tooltip" style="display: none; position: absolute; background: #fff; border: 1px solid #000; padding: 5px; border-radius: 3px; pointer-events: none; z-index: 1001;">
+                    Province...
+                </div>
+            </div>
+        </div>
+
+        <div class="column-data">
+            
+            <div class="tabs">
+                <button class="tab-link active" onclick="openTab(event, 'tab-budget')">💰 Budget & Fiscalité</button>
+                <button class="tab-link" onclick="openTab(event, 'tab-admin')">🏛️ Administration & Villes</button>
+                <button class="tab-link" onclick="openTab(event, 'tab-politique')">⚖️ Politique & Population</button>
+                <button class="tab-link" onclick="openTab(event, 'tab-population')">🧑‍🤝‍🧑 Démographie</button>
+                <button class="tab-link" onclick="openTab(event, 'tab-territoire')">🗺️ Territoire</button>
+                <button class="tab-link" onclick="openTab(event, 'tab-ressources')">🌳 Ressources & Agriculture</button>
+                <button class="tab-link" onclick="openTab(event, 'tab-industrie')">🏭 Industrie & Mines</button>
+                <button class="tab-link" onclick="openTab(event, 'tab-militaire')">⚔️ Armée</button>
+                <button class="tab-link" onclick="openTab(event, 'tab-operations')">🗺️ Opérations Militaires</button>
+                <button class="tab-link" onclick="openTab(event, 'tab-diplomatie')">🕊️ Diplomatie</button>
+                <button class="tab-link" onclick="openTab(event, 'tab-marine')">🚢 Marine</button>
+                <button class="tab-link" onclick="openTab(event, 'tab-colonies')">🌍 Colonies</button>
+                <button class="tab-link" onclick="openTab(event, 'tab-commerce')">📈 Commerce</button>
+            </div>
+
+            <div id="tab-budget" class="tab-content" style="display: block;">
+                <div class="card">
+                    <h2>Finances (Calculées)</h2>
+                    <div class="stat-grid" id="budget-summary">
+                        <div>Recettes <strong id="summary-recettes" class="positive">0 LT</strong></div>
+                        <div>Dépenses <strong id="summary-depenses" class="negative">0 LT</strong></div>
+                        <div>Solde Annuel <strong id="summary-solde" class="neutral">0 LT</strong></div>
+                        <div>Dette Actuelle <strong id="summary-dette" class="negative">0 LT</strong></div>
+                        <div id="stat-rnb">
+                            RNB (Dynamique) <strong id="summary-rnb" class="neutral">0 LT</strong>
+                        </div>
+                        <div id="stat-vct">
+                            Valeur Comm. (Dynamique) <strong id="summary-vct" class="neutral">0 LT</strong>
+                        </div>
+                    </div>
+                    
+                    <h3>Recettes (Budget Ordinaire)</h3>
+                    <p>Modifiez les taux pour ajuster les recettes. Les impôts directs impactent l'efficacité, les indirects la confiance. Les impôts par tranche sont gérés dans l'onglet 'Politique'.</p>
+                    <table class="data-table" id="revenues-table">
+                        <thead><tr><th>Source de Revenu</th><th>Taux / Valeur</th><th>Montant Annuel Estimé</th></tr></thead>
+                        <tbody></tbody>
+                    </table>
+                    <button onclick="toggleModal('modal-tax', true)">+ Créer un Nouvel Impôt</button> 
+
+                    <h3>Dépenses (Budget Ordinaire)</h3>
+                    <p>Ajustez les budgets d'investissement. Les coûts de personnel sont calculés automatiquement.</p>
+                    
+                    <details class="collapsible-section" open>
+                        <summary><h4>Budgets d'Investissement (Sliders & Inputs)</h4></summary>
+                        <div id="expenses-sliders">
+                            <div class="control-group">
+                                <label for="slider-sante_social">Santé & Social (1000000 LT)</label>
+                                <input type="range" id="slider-sante_social" min="0" max="3000000" value="1000000" 
+                                       oninput="updateDepenseSlider('sante_social', this.value)" 
+                                       style="width: 100%;">
+                            </div>
+                            <div class="control-group">
+                                <label for="slider-maison_dirigeant">Maison du Dirigeant (1000000 LT)</label>
+                                <input type="range" id="slider-maison_dirigeant" min="0" max="3000000" value="1000000" 
+                                       oninput="updateDepenseSlider('maison_dirigeant', this.value)" 
+                                       style="width: 100%;">
+                            </div>
+                            
+                            <div class="control-group">
+                                <label>Budget Infrastructure de Base (Fixe)</label>
+                                <input type="text" value="2 500 000 LT" disabled style="width: 100%; background: #eee;">
+                                <p style="font-size: 0.9em; color: #666;"><i>(Inclut +200km routes, +2 ponts par an)</i></p>
+                            </div>
+                            
+                            <div class="control-group">
+                                <label for="input-infrastructure-supplementaire">Construction d'Infrastructure (Supplémentaire)</label>
+                                <input type="number" id="input-infrastructure-supplementaire" value="0" onchange="updateDepenseInput('infrastructure_supplementaire', this.value)" style="width: 100%;">
+                            </div>
+                            </div>
+                    </details>
+                    
+                    <details class="collapsible-section" open>
+                        <summary><h4>Dépenses de l'État (Calculées)</h4></summary>
+                        <table class="data-table-simple">
+                            <tbody id="budget-summary-depenses">
+                                <tr><td>Dépenses de l'Armée de Terre</td><td>... LT</td></tr>
+                                <tr><td>Dépenses de la Marine</td><td>... LT</td></tr>
+                                <tr><td>Dépenses d'Administration</td><td>... LT</td></tr>
+                                <tr><td>Dépenses de Police (Gendarmerie)</td><td>... LT</td></tr>
+                                <tr><td>Dépenses des Percepteurs</td><td>... LT</td></tr>
+                                <tr><td>Dépenses des Services (Poste)</td><td>... LT</td></tr>
+                                <tr><td>Dépenses des Pensions</td><td>... LT</td></tr>
+                                <tr><td>Dépenses d'Éducation (Fixe)</td><td>... LT</td></tr>
+                                <tr><td>Entretien Infrastructures (Fixe)</td><td>... LT</td></tr>
+                                <tr><td>Charge de la Dette</td><td>... LT</td></tr>
+                            </tbody>
+                        </table>
+                    </details>
+
+                    <div class="action-grid-small" style="grid-template-columns: 1fr 1fr 1fr 1fr;">
+                            
+                            <div class="tooltip-container" data-tooltip-def="batiments_speciaux.universite">
+                                <button onclick="construireBatimentSimple('universite')">Construire Université</button>
+                            </div>
+                            <div class="tooltip-container" data-tooltip-def="batiments_speciaux.lycee">
+                                <button onclick="construireBatimentSimple('lycee')">Construire Lycée</button>
+                            </div>
+                            <div class="tooltip-container" data-tooltip-def="batiments_speciaux.ecole_primaire">
+                                <button onclick="construireBatimentSimple('ecole_primaire')">Construire 10 Écoles Primaires</button>
+                            </div>
+                            <div class="tooltip-container" data-tooltip-def="batiments_speciaux.hopital_civil">
+                                <button onclick="construireBatimentSimple('hopital_civil')">Construire Hôpital Civil</button>
+                            </div>
+                            
+                            <div class="tooltip-container" data-tooltip-def="batiments_speciaux.bureau_censure_royale">
+                                <button onclick="construireBatimentSimple('bureau_censure_royale')">Bureau de la Censure</button>
+                            </div>
+                            <div class="tooltip-container" data-tooltip-def="batiments_speciaux.institut_statistique">
+                                <button onclick="construireBatimentSimple('institut_statistique')">Institut de Statistique</button>
+                            </div>
+                            <div class="tooltip-container" data-tooltip-def="batiments_speciaux.hotel_des_monnaies">
+                                <button onclick="construireBatimentSimple('hotel_des_monnaies')">Hôtel des Monnaies</button>
+                            </div>
+                            <div class="tooltip-container" data-tooltip-def="batiments_speciaux.caserne_veterans">
+                                <button onclick="construireBatimentSimple('caserne_veterans')">Caserne de Vétérans</button>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+            <div id="tab-admin" class="tab-content">
+                <div class="card">
+                    <h2>Administration, Villes & Éducation</h2>
+                    <p>Gérez l'efficacité de votre État, le développement de vos villes et la formation de votre élite.</p>
+
+                    <div class="stat-grid" id="admin-summary-stats">
+                        <div id="stat-admin-efficacite">Efficacité Admin <strong class="neutral">70% / 80%</strong></div>
+                        <div id="stat-admin-total">Administrateurs <strong class="neutral">5 000</strong></div>
+                        <div id="stat-admin-officiers">Lieutenants (Pool) <strong class="positive">...</strong></div>
+                        <div id="stat-admin-infra">Infrastructures <strong class="neutral" style="font-size: 0.9em;">...</strong></div>
+                    </div>
+
+                    <details class="collapsible-section" open>
+                        <summary><h3>Salaires & Dépenses de Personnel</h3></summary>
+                        
+                        <h4>Salaires de l'Armée de Terre</h4>
+                        <div class="action-grid-small" style="grid-template-columns: 1fr 1fr;">
+                            <div class="control-group">
+                                <label for="salaire-input-soldat">Salaire Annuel Soldat (Ligne)</label>
+                                <input type="number" id="salaire-input-soldat" value="100" onchange="updateSalaireInput('soldat', this.value)">
+                            </div>
+                            <div class="control-group">
+                                <label for="salaire-input-sous_officier">Salaire Annuel S-Officier (Ligne)</label>
+                                <input type="number" id="salaire-input-sous_officier" value="200" onchange="updateSalaireInput('sous_officier', this.value)">
+                            </div>
+                        </div>
+                        <p>Les salaires des officiers supérieurs (Généraux, Colonels...) et les modificateurs (Garde, Cavalerie...) sont gérés dans l'onglet <b>Armée -> Doctrine</b>.</p>
+
+                        <h4>Salaires de la Marine</h4>
+                        <div class="control-group">
+                            <label for="salaire-input-marin_base">Salaire Annuel Marin (Base)</label>
+                            <input type="number" id="salaire-input-marin_base" value="140" onchange="updateSalaireInput('marin_base', this.value)">
+                        </div>
+                        <table class="data-table">
+                            <thead><tr><th>Rang (Officier Marine)</th><th>Salaire Annuel (LT)</th></tr></thead>
+                            <tbody id="navy-salary-table">
+                                </tbody>
+                        </table>
+                        
+                        <h4>Gestion des Services Publics (par Ratio)</h4>
+                        <p>Définissez le ratio d'agents par habitant. Un ratio plus bas (ex: 1/500) coûte plus cher mais augmente l'efficacité.</p>
+                        
+                        <div class="control-group">
+                            <label for="slider-ratio-police">Police (1 Gendarme / <span id="ratio-police-display">1500</span> hab.)</label>
+                            <input type="range" id="slider-ratio-police" min="500" max="5000" value="1500" step="50"
+                                   oninput="updateRatioSlider('police', this.value)">
+                            <p>Affecte la <b>Stabilité</b>. Coût annuel: <strong id="cout-ratio-police">...</strong> LT</p>
+                        </div>
+                        <div class="control-group">
+                            <label for="slider-ratio-percepteurs">Fiscalité (1 Percepteur / <span id="ratio-percepteurs-display">1000</span> hab.)</label>
+                            <input type="range" id="slider-ratio-percepteurs" min="500" max="5000" value="1000" step="50"
+                                   oninput="updateRatioSlider('percepteurs', this.value)">
+                            <p>Affecte le <b>Rendement des Impôts</b> et du <b>Domaine</b>. Coût annuel: <strong id="cout-ratio-percepteurs">...</strong> LT</p>
+                        </div>
+                        <div class="control-group">
+                            <label for="slider-ratio-poste">Services (1 Postier / <span id="ratio-poste-display">2000</span> hab.)</label>
+                            <input type="range" id="slider-ratio-poste" min="500" max="10000" value="2000" step="100"
+                                   oninput="updateRatioSlider('poste', this.value)">
+                            <p>Affecte l'<b>Efficacité Admin</b>. Coût annuel: <strong id="cout-ratio-poste">...</strong> LT</p>
+                        </div>
+                        
+                        <h4>Dépenses Fixes</h4>
+                        <div class="control-group">
+                            <label for="slider-budget-pensions">Budget Pensions (100%)</label>
+                            <input type="range" id="slider-budget-pensions" min="50" max="200" value="100" 
+                                   oninput="updateBudgetSlider('pensions', this.value)">
+                        </div>
+                    </details>
+                    
+                    <details class="collapsible-section">
+                        <summary><h3>Éducation, Santé & Bâtiments Nationaux (<span id="edu-count">0</span> Bâtiments)</h3></summary>
+                        <p>Construisez des écoles pour augmenter votre plafond d'efficacité et former des officiers.</p>
+                        
+                        <div class="action-grid-small" style="grid-template-columns: 1fr 1fr 1fr 1fr;">
+                            <div class="tooltip-container" data-tooltip-def="batiments_speciaux.universite">
+                                <button onclick="construireBatimentSimple('universite')">Construire Université</button>
+                            </div>
+                            <div class="tooltip-container" data-tooltip-def="batiments_speciaux.lycee">
+                                <button onclick="construireBatimentSimple('lycee')">Construire Lycée</button>
+                            </div>
+                            <div class="tooltip-container" data-tooltip-def="batiments_speciaux.ecole_primaire">
+                                <button onclick="construireBatimentSimple('ecole_primaire')">Construire 10 Écoles Primaires</button>
+                            </div>
+                            <div class="tooltip-container" data-tooltip-def="batiments_speciaux.hopital_civil">
+                                <button onclick="construireBatimentSimple('hopital_civil')">Construire Hôpital Civil</button>
+                            </div>
+                            <div class="tooltip-container" data-tooltip-def="batiments_speciaux.bureau_censure_royale">
+                                <button onclick="construireBatimentSimple('bureau_censure_royale')">Bureau de la Censure</button>
+                            </div>
+                            <div class="tooltip-container" data-tooltip-def="batiments_speciaux.institut_statistique">
+                                <button onclick="construireBatimentSimple('institut_statistique')">Institut de Statistique</button>
+                            </div>
+                            <div class="tooltip-container" data-tooltip-def="batiments_speciaux.hotel_des_monnaies">
+                                <button onclick="construireBatimentSimple('hotel_des_monnaies')">Hôtel des Monnaies</button>
+                            </div>
+                            <div class="tooltip-container" data-tooltip-def="batiments_speciaux.caserne_veterans">
+                                <button onclick="construireBatimentSimple('caserne_veterans')">Caserne de Vétérans</button>
+                            </div>
+                        </div>
+                        <h4>Formation de Lieutenants</h4>
+                        <button onclick="toggleModal('modal-officer-train', true)">Former une Promotion</button>
+                        <table class="data-table">
+                            <thead><tr><th>Promotion</th><th>Quantité</th><th>Temps Restant</th></tr></thead>
+                            <tbody id="officer-queue-table"></tbody>
+                        </table>
+                    </details>
+
+                    <details class="collapsible-section" open>
+                        <summary><h3>Gestion des Villes (Métropole)</h3></summary>
+                        <p>Gérez vos centres urbains. Chaque bâtiment ajoute des administrateurs et augmente votre facture salariale.</p>
+                        <button onclick="fonderVilleMetropole()">Fonder une Nouvelle Ville</button>
+                        
+                        <details class="collapsible-section-simple" open>
+                            <summary><h4>Grandes Villes (<span id="city-count-g">0</span>)</h4></summary>
+                            <table class="data-table">
+                                <thead><tr><th>Nom</th><th>Type</th><th>Population (est.)</th><th>Actions</th></tr></thead>
+                                <tbody id="city-list-table-g"></tbody>
+                            </table>
+                        </details>
+                        
+                        <details class="collapsible-section-simple">
+                            <summary><h4>Villes Moyennes (<span id="city-count-m">0</span>)</h4></summary>
+                            <table class="data-table">
+                                <thead><tr><th>Nom</th><th>Type</th><th>Population (est.)</th><th>Actions</th></tr></thead>
+                                <tbody id="city-list-table-m"></tbody>
+                            </table>
+                        </details>
+                        
+                        <details class="collapsible-section-simple">
+                            <summary><h4>Petites Villes (<span id="city-count-p">0</span>)</h4></summary>
+                            <table class="data-table">
+                                <thead><tr><th>Nom</th><th>Type</th><th>Population (est.)</th><th>Actions</th></tr></thead>
+                                <tbody id="city-list-table-p"></tbody>
+                            </table>
+                        </details>
+                    </details>
+                    
+                    <details class="collapsible-section" open>
+                        <summary><h3>Infrastructures Nationales</h3></summary>
+                        <p>Construisez des routes, ponts et canaux pour améliorer votre économie. Le coût est payé directement par le Trésor. Le budget d'entretien et de construction de base (200km routes, 2 ponts) est géré automatiquement.</p>
+                        <div class="action-grid-small" style="grid-template-columns: 2fr 1fr;">
+                            <div class="control-group">
+                                <label for="projet-simple-select">Projet à construire</label>
+                                <select id="projet-simple-select">
+                                    </select>
+                            </div>
+                            <button onclick="construireProjetSimple()">Construire</button>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <div id="tab-politique" class="tab-content">
+                <div class="card">
+                    <h2>Politique Intérieure & Population</h2>
+                    
+                    <details class="collapsible-section" open>
+                        <summary><h3>Tranches de Revenus</h3></summary>
+                        <p>Ajustez le taux d'imposition pour chaque tranche de la population. Des taux élevés peuvent provoquer des effets négatifs.</p>
+                        <table class="data-table">
+                            <thead><tr><th>Tranche</th><th>Population (est.)</th><th>Taux d'Imposition</th><th>Effets Actuels</th></tr></thead>
+                            <tbody>
+                                <tr>
+                                    <td>Hauts Revenus</td>
+                                    <td id="tranche-haut-pop">...</td>
+                                    <td><input type="number" id="tranche-haut-tax" value="20" min="0" max="70" onchange="updateTaxTranche('haut', this.value)"> %</td>
+                                    <td id="tranche-haut-effets">...</td>
+                                </tr>
+                                <tr>
+                                    <td>Revenus Moyens</td>
+                                    <td id="tranche-moyen-pop">...</td>
+                                    <td><input type="number" id="tranche-moyen-tax" value="15" min="0" max="50" onchange="updateTaxTranche('moyen', this.value)"> %</td>
+                                    <td id="tranche-moyen-effets">...</td>
+                                </tr>
+                                <tr>
+                                    <td>Bas Revenus</td>
+                                    <td id="tranche-bas-pop">...</td>
+                                    <td><input type="number" id="tranche-bas-tax" value="5" min="0" max="30" onchange="updateTaxTranche('bas', this.value)"> %</td>
+                                    <td id="tranche-bas-effets">...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </details>
+
+                    <details class="collapsible-section" open>
+                        <summary><h3>Population Active (Métropole)</h3></summary>
+                        <div class="stat-grid" style="grid-template-columns: 1fr 1fr 1fr 1fr;">
+                            <div>Population Totale <strong id="pool-pop-totale">...</strong></div>
+                            <div>Ouvriers/Admin/Armée (Assignés) <strong id="pool-pop-assignee">...</strong></div>
+                            <div>Population Non-Assignée (Paysans, etc.) <strong id="pool-pop-non-assignee" class="neutral">...</strong></div>
+                            <div><b>Pool Main d'œuvre (Disponible)</b> <strong id="pool-pop-disponible" class="positive">...</strong></div>
+                        </div>
+                        <p>Votre <b>Pool de Main d'œuvre</b> (le 1/140e "Industriel") est la population disponible pour le recrutement d'ouvriers. La <b>Population Non-Assignée</b> représente les paysans, enfants, etc. Le recrutement militaire utilise son propre pool (voir onglet ⚔️ Armée).</p>
+                    </details>
+                    
+                    <details class="collapsible-section" open>
+                        <summary><h3>Gouvernement & Ministres</h3></summary>
+                        <p>Nommez vos ministres. Le nombre de postes que vous pouvez pourvoir est défini par votre nombre de ministres. Un même individu ne peut occuper qu'un seul poste.</p>
+                        
+                        <div class="action-grid-small" style="grid-template-columns: 1fr 1fr 1fr;">
+                            <div class="control-group">
+                                <label for="ministres-nombre-input">Nombre de Ministres</label>
+                                <input type="number" id="ministres-nombre-input" value="7" min="1" max="7" onchange="updateNombreMinistres(this.value)">
+                            </div>
+                            <div class="control-group">
+                                <label>Postes Pourvus</label>
+                                <strong id="ministres-focus-dispo" class="neutral" style="font-size: 1.2em; display: block; padding-top: 8px;">0 / 7</strong>
+                            </div>
+                        </div>
+                        
+                        <h4>Cabinet Ministériel</h4>
+                        <div id="ministeres-container">
+                            <div class="control-group ministere-slot">
+                                <label>Ministre de la Guerre</label>
+                                <select id="select_ministre_guerre" onchange="sauvegarderMinistres()"></select>
+                            </div>
+                            <div class="control-group ministere-slot">
+                                <label>Ministre de la Marine</label>
+                                <select id="select_ministre_marine" onchange="sauvegarderMinistres()"></select>
+                            </div>
+                            <div class="control-group ministere-slot">
+                                <label>Ministre de l'Intérieur</label>
+                                <select id="select_ministre_interieur" onchange="sauvegarderMinistres()"></select>
+                            </div>
+                            <div class="control-group ministere-slot">
+                                <label>Ministre des Finances</label>
+                                <select id="select_ministre_finances" onchange="sauvegarderMinistres()"></select>
+                            </div>
+                            <div class="control-group ministere-slot">
+                                <label>Ministre du Commerce</label>
+                                <select id="select_ministre_commerce" onchange="sauvegarderMinistres()"></select>
+                            </div>
+                            <div class="control-group ministere-slot">
+                                <label>Ministre des Colonies</label>
+                                <select id="select_ministre_colonies" onchange="sauvegarderMinistres()"></select>
+                            </div>
+                            <div class="control-group ministere-slot">
+                                <label>Ministre de l'Administration (Justice & Éducation)</label>
+                                <select id="select_ministre_administration" onchange="sauvegarderMinistres()"></select>
+                            </div>
+                        </div>
+                    </details>
+                        <p id="ministres-alerte-doublon" style="color: red; display: none;"><b>Attention :</b> Un ministre ne peut pas occuper deux postes ! Le dernier choix sera ignoré au prochain tour.</p>
+                    </details>
+                    </div>
+            </div>
+            
+            <div id="tab-population" class="tab-content">
+                <div class="card">
+                    <h2>Démographie</h2>
+                    
+                    <h3>Démographie de l'Empire</h3>
+                    <div class="stat-grid" style="grid-template-columns: 1fr 1fr 1fr 1fr;">
+                        <div>Population Totale <strong id="pop-total-empire">0</strong></div>
+                        <div>Métropole <strong id="pop-total-metropole">0</strong></div>
+                        <div>Colons Blancs <strong id="pop-total-colons" class="positive">0</strong></div>
+                        <div>Population Coloniale <strong id="pop-total-colonies" class="neutral">0</strong></div>
+                    </div>
+
+                    <h3>Démographie (Métropole)</h3>
+                    <div class="stat-grid" style="grid-template-columns: 1fr 1fr 1fr 1fr;">
+                        <div>Naissances (est. /an) <strong id="pop-naissances" class="positive">0</strong></div>
+                        <div>Décès (est. /an) <strong id="pop-deces" class="negative">0</strong></div>
+                        <div>Croissance Nette (est. /an) <strong id="pop-nette" class="neutral">0</strong></div>
+                    </div>
+                    
+                    </div>
+            </div>
+            
+            <div id="tab-territoire" class="tab-content">
+                <div class="card">
+                    <h2>Superficie & Territoire</h2>
+                    
+                    <details class="collapsible-section" open>
+                        <summary><h3>Métropole</h3></summary>
+                        <div class="stat-grid" style="grid-template-columns: 1fr 1fr 1fr 1fr;">
+                            <div>Superficie Totale <strong id="terr-superficie-km2">0 km²</strong></div>
+                            <div>Densité <strong id="terr-densite">0 hab/km²</strong></div>
+                            <div>Superficie Agricole <strong id="terr-agricole-ha">0 ha</strong></div>
+                            <div>Superficie Forêt <strong id="terr-foret-ha">0 ha</strong></div>
+                        </div>
+                    </details>
+                    
+                    <details class="collapsible-section" open>
+                        <summary><h3>Colonies</h3></summary>
+                        <div class="stat-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+                            <div>Superficie Totale Découverte <strong id="terr-col-total-km2">0 km²</strong></div>
+                            <div>Superficie Cultivée <strong id="terr-col-cultives-km2">0 km²</strong></div>
+                            <div>Terres Disponibles <strong id="terr-col-dispo-km2">0 km²</strong></div>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <div id="tab-ressources" class="tab-content">
+                <div class="card">
+                    <h2>Ressources Naturelles & Agriculture</h2>
+                    <p>Gérez l'exploitation durable de vos terres et forêts.</p>
+                    
+                    <details class="collapsible-section" open>
+                        <summary><h3>Gestion Forestière</h3></summary>
+                        <div class="stat-grid" style="grid-template-columns: 1fr 1fr;">
+                            <div>Forêt Totale <strong id="admin-foret-total">0 ha</strong></div>
+                            <div>Stock de Bois <strong id="admin-stock-bois">0 m³</strong></div>
+                        </div>
+                        <div class="control-group">
+                            <label for="slider-foret">Taux d'exploitation (100% = durable)</label>
+                            <input type="range" id="slider-foret" min="0" max="200" value="100" 
+                                   oninput="updateExploitationSlider('taux_exploitation_bois', this.value)">
+                        </div>
+                        <button onclick="planterForet()">Planter 200ha de Forêt (10 000 LT)</button>
+                    </details>
+                    
+                    <details class="collapsible-section" open>
+                        <summary><h3>Agriculture (Total: <span id="admin-agriculture-total">0</span> ha)</h3></summary>
+                        <p>La production agricole est basée sur la superficie et la fertilité. Elle produit le RNB de base et nourrit votre population.</p>
+                        <table class="data-table">
+                            <thead><tr><th>Culture</th><th>Hectares Alloués</th><th>Production /an</th><th>Valeur</th></tr></thead>
+                            <tbody id="admin-agriculture-table"></tbody>
+                        </table>
+                    </details>
+
+                    <details class="collapsible-section">
+                        <summary><h3>Développement Agricole (Métropole)</h3></summary>
+                        <p>Augmentez votre production agricole en défrichant des forêts ou en déployant de nouvelles machines.</p>
+                        
+                        <h4>Terres</h4>
+                        <button onclick="defricherTerre()">Défricher 1 000 ha de Forêt (100 000 LT)</button>
+                        <p style="font-size: 0.9em;"><i>Coûte 100 000 LT et retire 1 000 ha à vos forêts pour les convertir en terres agricoles.</i></p>
+
+                        <h4>Technologie</h4>
+                        <div class="action-grid-small">
+                            <div class="control-group">
+                                <label>Machines en Stock</label>
+                                <strong id="stock-machines-agri" class="neutral" style="font-size: 1.2em;">0</strong>
+                            </div>
+                            <button onclick="deployerMachineAgricole('batteuse')">Déployer 1 Batteuse</button>
+                            <button onclick="deployerMachineAgricole('outils')">Déployer 1 Outil</button>
+                        </div>
+                        <p style="font-size: 0.9em;"><i>Consomme 1 machine du stock. Augmente le rendement des cultures de façon permanente.</i></p>
+                    </details>
+                </div>
+            </div>
+
+            <div id="tab-industrie" class="tab-content">
+                <div class="card">
+                    <h2>Industrie, Mines & Manufactures</h2>
+                    <p>Transformez vos matières premières en biens et en équipement militaire.</p>
+
+                    <details class="collapsible-section" open>
+                        <summary><h3>Matières Premières (Stocks)</h3></summary>
+                        <div class="stat-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+                            <div>Stock Fer <strong id="stock-fer-total">0 T</strong></div>
+                            <div>Stock Cuivre <strong id="stock-cuivre-total">0 Q</strong></div>
+                            <div>Stock Poudre <strong id="stock-poudre-total">0 T</strong></div>
+                            <div>Stock Charbon <strong id="stock-charbon-total">0 T</strong></div>
+                            <div>Machines Agri. <strong id="stock-machines-agri-total" class="neutral">0</strong></div>
+                            <div>Moteurs Vapeur <strong id="stock-moteurs-vapeur-total" class="neutral">0</strong></div>
+                            <div>Stock Canons (Terre) <strong id="stock-canons-terre-total" class="neutral">0</strong></div>
+                            <div>Stock Canons (Mer) <strong id="stock-canons-mer-total" class="neutral">0</strong></div>
+                        </div>
+                    </details>
+                    
+                    <details class="collapsible-section">
+                        <summary><h3>Mines & Production Brute</h3></summary>
+                        <button onclick="ouvrirModalConstruction('mine')">Construire/Agrandir Mine</button>
+                        <table class="data-table">
+                            <thead><tr><th>Nom</th><th>Production Annuelle</th><th>Ouvriers</th><th>Actions</th></tr></thead>
+                            <tbody id="mine-table"></tbody>
+                        </table>
+                    </details>
+                    
+                    <details class="collapsible-section">
+                        <summary><h3>Haras Royaux (<span id="haras-count">0</span>)</h3></summary>
+                        <p>Élevez des chevaux pour votre cavalerie, artillerie, officiers et services civils.</p>
+                        <button onclick="construireBatimentSimple('haras_royal')">Construire Haras Royal (400k LT)</button>
+                        <table class="data-table">
+                            <thead><tr><th>Bâtiment</th><th>Nombre</th><th>Production /an</th><th>Entretien /an</th></tr></thead>
+                            <tbody id="haras-table">
+                                </tbody>
+                        </table>
+                    </details>
+                    <details class="collapsible-section">
+                        <summary><h3>Manufactures Militaires (<span id="manufacture-count">0</span>)</h3></summary>
+                        <button onclick="ouvrirModalConstruction('militaire')">Construire Manufacture d'Armes</button>
+                        <table class="data-table">
+                            <thead><tr><th>Nom</th><th>Production Annuelle</th><th>Ouvriers</th><th>Actions</th></tr></thead>
+                            <tbody id="manufacture-table"></tbody>
+                        </table>
+                    </details>
+
+                    <details class="collapsible-section">
+                        <summary><h3>Manufactures Civiles (<span id="admin-manufactures-civiles-nb">0</span>)</h3></summary>
+                        <button onclick="ouvrirModalConstruction('civile')">Construire Manufacture Civile</button>
+                        <table class="data-table">
+                            <thead><tr><th>Nom</th><th>Ouvriers</th><th>Bonus RNB /an</th><th>Actions</th></tr></thead>
+                            <tbody id="admin-manufactures-civiles-table">
+                                </tbody>
+                        </table>
+                    </details>
+                    
+                    <details class="collapsible-section">
+                        <summary><h3>Industries Avancées & Luxe</h3></summary>
+                        <div class="action-grid-small">
+                            <button onclick="ouvrirModalConstruction('avancee')">Construire Manufacture Avancée</button>
+                            <button onclick="ouvrirModalConstruction('luxe')">Construire Manufacture de Luxe</button>
+                        </div>
+                        <table class="data-table">
+                            <thead><tr><th>Nom</th><th>Type</th><th>Production /an</th><th>Ouvriers</th></tr></thead>
+                            <tbody id="advanced-industry-table"></tbody>
+                        </table>
+                    </details>
+                    
+                    <details class="collapsible-section">
+                        <summary><h3>Finance</h3></summary>
+                        <button onclick="ouvrirModalConstruction('banque')">Fonder une Banque</button>
+                        <table class="data-table">
+                            <thead><tr><th>Nom</th><th>Type</th><th>Bonus RNB /an</th><th>Ouvriers</th></tr></thead>
+                            <tbody id="finance-table"></tbody>
+                        </table>
+                    </details>
+                </div>
+            </div>
+
+            <div id="tab-militaire" class="tab-content">
+                <div class="card">
+                    <h2>Statut de l'Armée de Terre</h2>
+                    <div class="stat-grid" id="army-summary">
+                        <div>Infanterie <strong id="summary-armee-inf">0</strong></div>
+                        <div>Cavalerie <strong id="summary-armee-cav">0</strong></div>
+                        <div>Artillerie <strong id="summary-armee-art">0</strong></div>
+                        <div>Génie <strong id="summary-armee-genie">0</strong></div>
+                        <div>Garde <strong id="summary-armee-garde">0</strong></div>
+                        <div>Réserve Recrutable <strong id="summary-armee-reserve">0</strong></div>
+                        <div>Chevaux (Dispo/Besoin) <strong id="summary-armee-chevaux">0</strong></div>
+                        <div>Stock Fusils <strong id="summary-armee-fusils" class="neutral">0</strong></div>
+                        <div>Stock Canons (Terre) <strong id="summary-armee-canons-terre" class="neutral">0</strong></div>
+                        <div>Stock Canons (Mer) <strong id="summary-armee-canons-mer" class="neutral">0</strong></div>
+                    </div>
+                    
+                    <details class="collapsible-section" open>
+                        <summary><h4>Détail des Coûts de l'Armée de Terre</h4></summary>
+                        
+                        <h5>Salaires (Calculés)</h5>
+                        <table class="data-table-simple">
+                            <tbody>
+                                <tr><td>Soldats & Garde Nationale</td><td id="mil-cout-soldats">... LT</td></tr>
+                                <tr><td>Sous-Officiers</td><td id="mil-cout-sous_officiers">... LT</td></tr>
+                                <tr><td>Officiers (Total)</td><td id="mil-cout-officiers">... LT</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h5>Coûts Opérationnels (Calculés)</h5>
+                        <table class="data-table-simple">
+                            <tbody>
+                                <tr><td>Administration de l'Armée (Commis)</td><td id="mil-detail-admin">... LT</td></tr>
+                                <tr><td>Entretien (Rations)</td><td id="mil-detail-rations">... LT</td></tr>
+                                <tr><td>Entretien (Uniformes)</td><td id="mil-detail-uniformes">... LT</td></tr>
+                                <tr><td>Entretien (Entraînement)</td><td id="mil-detail-entrainement">... LT</td></tr>
+                                <tr><td>Entretien (Artillerie & Attirail)</td><td id="mil-detail-artillerie">... LT</td></tr>
+                                <tr><td>Entretien (Armement Léger)</td><td id="mil-detail-fusils">... LT</td></tr>
+                                <tr><td>Entretien Places & Casernes</td><td id="mil-detail-forteresses">... LT</td></tr>
+                                <tr><td>Entretien Haras Royaux</td><td id="mil-detail-haras">... LT</td></tr>
+                            </tbody>
+                        </table>
+                    </details>
+                    
+                    <h3>Constitution des Forces</h3>
+                    <div class="action-grid-small">
+                        <div class="control-group">
+                            <label>Type d'unité</label>
+                            <select id="unit-type-select"></select>
+                        </div>
+                        <div class="control-group">
+                            <label>Quantité</label>
+                            <input type="number" id="unit-quantity-input" value="1" min="1">
+                        </div>
+                        <button onclick="constituerArmees()">Recruter Unités</button>
+                    </div>
+                    <div class="action-grid-small">
+                        <div class="control-group">
+                            <label>Acheter Chevaux</label>
+                            <input type="number" id="horses-buy-input" value="1000" min="0" step="100">
+                        </div>
+                        <button onclick="acheterChevaux()">Acheter Chevaux</button>
+                        <div class="control-group">
+                            <label>Acheter Fusils (Stock)</label>
+                            <input type="number" id="fusils-buy-input" value="1000" min="0" step="100">
+                        </div>
+                        <button onclick="acheterFusils()">Acheter Fusils</button>
+                    </div>
+
+                    <details class="collapsible-section" open>
+                        <summary><h3>Structure de Commandement (Officiers)</h3></summary>
+                        <p>Salaires de base gérés dans l'onglet Administration. Lieutenants formés via les Écoles Militaires.</p>
+                        <div class="stat-grid" id="officer-hierarchy-stats" style="grid-template-columns: 1fr 1fr 1fr;">
+                            </div>
+                    </details>
+
+                        <div class="stat-grid" id="officer-hierarchy-stats" style="grid-template-columns: 1fr 1fr 1fr;">
+                        </div>
+
+                        <h4>Promotions & Nominations</h4>
+                        <p>Dépensez du trésor et des officiers de rang inférieur pour combler les postes vacants.</p>
+                        <div class="action-grid-small" style="grid-template-columns: 1fr 1fr 1fr;">
+                            <button onclick="promouvoirOfficiers('lieutenant', 'capitaine')">Promouvoir 10 Lieutenants (50k LT)</button>
+                            <button onclick="promouvoirOfficiers('capitaine', 'lieutenant_colonel')">Promouvoir 5 Capitaines (100k LT)</button>
+                            <button onclick="promouvoirOfficiers('lieutenant_colonel', 'colonel')">Promouvoir 2 Ltn-Colonels (200k LT)</button>
+                            <button onclick="nommerGeneral('general_brigade')">Nommer 1 Gén. de Brigade (500k LT)</button>
+                            <button onclick="nommerGeneral('general_division')">Nommer 1 Gén. de Division (1M LT)</button>
+                        </div>
+                        </details>
+
+                    <details class="collapsible-section">
+                        <summary><h3>Forteresses (<span id="fortress-count">0</span>)</h3></summary>
+                        <button onclick="ouvrirModalConstruction('forteresse')">Construire Forteresse</button>
+                        <button onclick="construireBatimentSimple('hopital_militaire')">Construire Hôpital Militaire</button> <table class="data-table">
+                            <thead><tr><th>Type</th><th>Nombre</th><th>Garnison max. (estimée)</th></tr></thead>
+                            <tbody id="fortress-table"></tbody>
+                        </table>
+                    </details>
+
+                    <details class="collapsible-section" open>
+                        <summary><h3>Gestion des Régiments</h3></summary>
+                        <button onclick="construireBatimentSimple('ecole_militaire')">Construire École Militaire</button>
+                        
+                        <details class="collapsible-section-simple" open>
+                            <summary><h4>Infanterie (<span id="regiment-count-inf">0</span>)</h4></summary>
+                            <table class="data-table">
+                                <thead><tr><th>Nom</th><th>Type</th><th>Effectif</th><th>Localisation</th><th>Actions</th></tr></thead>
+                                <tbody id="regiment-table-inf"></tbody>
+                            </table>
+                        </details>
+                        <details class="collapsible-section-simple">
+                            <summary><h4>Cavalerie (<span id="regiment-count-cav">0</span>)</h4></summary>
+                            <table class="data-table">
+                                <thead><tr><th>Nom</th><th>Type</th><th>Effectif</th><th>Localisation</th><th>Actions</th></tr></thead>
+                                <tbody id="regiment-table-cav"></tbody>
+                            </table>
+                        </details>
+                        <details class="collapsible-section-simple">
+                            <summary><h4>Artillerie (<span id="regiment-count-art">0</span>)</h4></summary>
+                            <table class="data-table">
+                                <thead><tr><th>Nom</th><th>Type</th><th>Effectif</th><th>Localisation</th><th>Actions</th></tr></thead>
+                                <tbody id="regiment-table-art"></tbody>
+                            </table>
+                        </details>
+                        <details class="collapsible-section-simple">
+                            <summary><h4>Génie & Sapeurs (<span id="regiment-count-genie">0</span>)</h4></summary>
+                            <table class="data-table">
+                                <thead><tr><th>Nom</th><th>Type</th><th>Effectif</th><th>Localisation</th><th>Actions</th></tr></thead>
+                                <tbody id="regiment-table-genie"></tbody>
+                            </table>
+                        </details>
+                        <details class="collapsible-section-simple">
+                            <summary><h4>Garde (<span id="regiment-count-garde">0</span>)</h4></summary>
+                            <table class="data-table">
+                                <thead><tr><th>Nom</th><th>Type</th><th>Effectif</th><th>Localisation</th><th>Actions</th></tr></thead>
+                                <tbody id="regiment-table-garde"></tbody>
+                            </table>
+                        </details>
+                        
+                        <details class="collapsible-section-simple" open>
+                            <summary><h4>Garde Nationale (Milice Métropole)</h4></summary>
+                            <p>Mobilisez une partie de votre population en tant que force de réserve. Ils nécessitent des fusils et un coût d'entretien (0.15 LT/jour).</p>
+                            <div class="control-group">
+                                <label for="slider-garde-ratio">Taux de mobilisation (1 / <span id="garde-ratio-display">200</span> habitants)</label>
+                                <input type="range" id="slider-garde-ratio" min="50" max="500" value="200" oninput="updateGardeRatio(this.value)">
+                            </div>
+                            
+                            <h4>Statut de la Garde</h4>
+                            <div class="stat-grid" style="grid-template-columns: 1fr 1fr 1fr 1fr 1fr;">
+                                <div>Effectif Cible <strong id="garde-cible">0</strong></div>
+                                <div>Effectif Actuel <strong id="garde-actuel">0</strong></div>
+                                <div>Fusils Requis <strong id="garde-fusils" class="negative">0</strong></div>
+                                <div>Bataillons (est.) <strong id="garde-bataillons">0</strong></div>
+                                <div>Officiers Requis <strong id="garde-officiers-requis" class="negative">0</strong></div>
+                            </div>
+                            <p>Coût de la Solde : <strong id="garde-cout" class="negative">0 LT/an</strong> (Calculé dans le budget militaire)</p>
+                            <button onclick="recruterGardeNationale()">Ajuster la Garde Nationale (Recruter / Démobiliser)</button>
+                        </details>
+                        </details>
+
+                    <details class="collapsible-section">
+                        <summary><h3><span style="font-size: 0.8em;">⚙️</span> Doctrine & Composition des Régiments</h3></summary>
+                        <p>Ajustez la taille et l'encadrement de vos unités. Cela affectera le coût, le manpower et l'efficacité.</p>
+                        
+                        <h4>Infanterie (Compagnie -> Bataillon -> Régiment)</h4>
+                        <div class="action-grid-small" style="grid-template-columns: 1fr 1fr 1fr 1fr;">
+                            <div class="control-group">
+                                <label for="doctrine-inf-soldats">Soldats / Cie</label>
+                                <input type="number" id="doctrine-inf-soldats" onchange="updateDoctrine('infanterie', 'soldats_compagnie', this.value)">
+                            </div>
+                            <div class="control-group">
+                                <label for="doctrine-inf-sous_officiers">Sous-Off. / Cie</label>
+                                <input type="number" id="doctrine-inf-sous_officiers" onchange="updateDoctrine('infanterie', 'sous_officiers_compagnie', this.value)">
+                            </div>
+                            <div class="control-group">
+                                <label for="doctrine-inf-compagnies">Cies / Bataillon</label>
+                                <input type="number" id="doctrine-inf-compagnies" onchange="updateDoctrine('infanterie', 'compagnies_bataillon', this.value)">
+                            </div>
+                            <div class="control-group">
+                                <label for="doctrine-inf-bataillons">Bataillons / Régiment</label>
+                                <input type="number" id="doctrine-inf-bataillons" onchange="updateDoctrine('infanterie', 'bataillons_regiment', this.value)">
+                            </div>
+                        </div>
+                        <p><strong>Total (Infanterie) :</strong> <strong id="doctrine-inf-total">...</strong> (Hommes/Sous-Officiers)</p>
+
+                        <h4>Cavalerie (Escadron -> Régiment)</h4>
+                        <div class="action-grid-small" style="grid-template-columns: 1fr 1fr 1fr;">
+                            <div class="control-group">
+                                <label for="doctrine-cav-soldats">Soldats / Escadron</label>
+                                <input type="number" id="doctrine-cav-soldats" onchange="updateDoctrine('cavalerie', 'soldats_escadron', this.value)">
+                            </div>
+                            <div class="control-group">
+                                <label for="doctrine-cav-sous_officiers">Sous-Off. / Escadron</label>
+                                <input type="number" id="doctrine-cav-sous_officiers" onchange="updateDoctrine('cavalerie', 'sous_officiers_escadron', this.value)">
+                            </div>
+                            <div class="control-group">
+                                <label for="doctrine-cav-escadrons">Escadrons / Régiment</label>
+                                <input type="number" id="doctrine-cav-escadrons" onchange="updateDoctrine('cavalerie', 'escadrons_regiment', this.value)">
+                            </div>
+                        </div>
+                        <p><strong>Total (Cavalerie) :</strong> <strong id="doctrine-cav-total">...</strong> (Cavaliers/Sous-Officiers)</p>
+                        
+                        <h4>Salaires des Officiers Supérieurs (Terre)</h4>
+                        <table class="data-table">
+                            <thead><tr><th>Rang (Armée)</th><th>Salaire Annuel (LT)</th></tr></thead>
+                            <tbody id="army-salary-table">
+                                </tbody>
+                        </table>
+
+                    </details>
+                </div>
+            </div>
+
+            <div id="tab-operations" class="tab-content">
+                <div class="card">
+                    <h2>Opérations Militaires & Gestion des Armées</h2>
+                    <p>Organisez vos régiments en armées et déplacez-les sur la carte.</p>
+                    
+                    <details class="collapsible-section" open>
+                        <summary><h3>Armées Formées (Total: <span id="armees-count">0</span>)</h3></summary>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Nom de l'Armée</th>
+                                    <th>Localisation</th>
+                                    <th>Effectif (Régiments)</th>
+                                    <th>Puissance (est.)</th> 
+                                    <th>Statut</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="armees-list-table">
+                                </tbody>
+                        </table>
+                    </details>
+                    
+                    <details class="collapsible-section" open>
+                        <summary><h3>Régiments en Garnison (Non assignés)</h3></summary>
+                        <p>Sélectionnez les régiments (tous dans la même province) pour former une nouvelle armée.</p>
+                        <div class="action-grid-small" style="grid-template-columns: 2fr 1fr 1fr;">
+                            <div class="control-group">
+                                <label>Nom de la nouvelle armée</label>
+                                <input type="text" id="new-army-name" placeholder="Ex: Armée du Nord">
+                            </div>
+                            <div class="control-group">
+                                <label>Statut</label>
+                                <select id="new-army-status">
+                                    <option value="defense">Défense</option>
+                                    <option value="invasion">Invasion</option>
+                                </select>
+                            </div>
+                            <button onclick="creerArmee()">Former l'Armée</button>
+                        </div>
+                        
+                        <div id="garnison-list-container"></div>
+                    </details>
+                </div>
+            </div>
+            
+            <div id="tab-diplomatie" class="tab-content">
+                <div class="card">
+                    
+                    <details class="collapsible-section" open>
+                        <summary><h3>Guerres Actives (Point #6)</h3></summary>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Conflit</th>
+                                    <th>Score de Guerre</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="guerres-actives-table">
+                                <tr><td colspan="3">Vous êtes actuellement en paix.</td></tr>
+                            </tbody>
+                        </table>
+                    </details>
+                    
+                    <details class="collapsible-section" open>
+                        <summary><h3>Relations Diplomatiques</h3></summary>
+                        <p>Gérez vos relations avec les autres puissances.</p>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Faction</th>
+                                    <th>Statut</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="diplomatie-list-table">
+                                </tbody>
+                        </table>
+                    </details>
+                </div>
+            </div>
+
+            <div id="tab-marine" class="tab-content">
+                <div class="card">
+                    <h2>Statut de la Flotte</h2>
+                    <div class="stat-grid" id="navy-summary">
+                        <div>Vaisseaux de Ligne <strong id="summary-marine-ligne">0</strong></div>
+                        <div>Frégates & Escorte <strong id="summary-marine-fregates">0</strong></div>
+                        <div>Marins (Disponibles) <strong id="summary-marine-marins">0</strong></div>
+                        <div>Capacité Radoub <strong id="summary-marine-radoub">0</strong></div>
+                    </div>
+                    
+                    <details class="collapsible-section" open>
+                        <summary><h4>Détail des Coûts de la Marine</h4></summary>
+                        <h5>Salaires (Calculés)</h5>
+                        <table class="data-table-simple">
+                            <tbody>
+                                <tr><td>Marins & Troupes</td><td id="marine-cout-marins">... LT</td></tr>
+                                <tr><td>Officiers (Total)</td><td id="marine-cout-officiers">... LT</td></tr>
+                            </tbody>
+                        </table>
+                        <h5>Coûts Opérationnels (Calculés)</h5>
+                        <table class="data-table-simple">
+                            <tbody>
+                                <tr><td>Entretien Navires & Ports</td><td id="marine-detail-entretien">... LT</td></tr>
+                                <tr><td>Approvisionnement Flotte</td><td id="marine-detail-appro">... LT</td></tr>
+                            </tbody>
+                        </table>
+                    </details>
+                    <h3>Construction Navale</h3>
+                    <div class="action-grid-small">
+                        <div class="control-group">
+                            <label>Type de Navire</label>
+                            <select id="navire-type-select"></select>
+                        </div>
+                        <div class="control-group">
+                            <label>Quantité</label>
+                            <input type="number" id="navire-construire-nb" value="1" min="1">
+                        </div>
+                        <button onclick="construireNavires()">Construire Navires</button>
+                    </div>
+
+                    <details class="collapsible-section">
+                        <summary><h3>Industrie & Infrastructure Navale (<span id="arsenal-count">0</span>)</h3></summary>
+                        <button onclick="ouvrirModalConstruction('naval')">Construire Bâtiment Naval</button>
+                        <button onclick="construireBatimentSimple('ecole-navale')">Construire École Navale</button>
+                        <table class="data-table">
+                            <thead><tr><th>Infrastructure</th><th>Niveau/Nombre</th><th>Effet</th></tr></thead>
+                            <tbody id="arsenal-table"></tbody>
+                        </table>
+                    </details>
+                    
+                    <details class="collapsible-section" open>
+                        <summary><h3>Gestion de la Flotte</h3></summary>
+                        <div class="action-grid-small">
+                            <button onclick="flotteMassAction('arme')">Armer toute la flotte</button>
+                            <button onclick="flotteMassAction('desarme')" class="btn-danger">Désarmer toute la flotte</button>
+                        </div>
+                        
+                        <details class="collapsible-section-simple" open>
+                            <summary><h4>Vaisseaux de Ligne (<span id="fleet-count-ligne">0</span>)</h4></summary>
+                            <table class="data-table">
+                                <thead><tr><th>Nom</th><th>Type</th><th>Statut</th><th>Âge</th><th>Actions</th></tr></thead>
+                                <tbody id="fleet-table-ligne"></tbody>
+                            </table>
+                        </details>
+                        
+                        <details class="collapsible-section-simple" open>
+                            <summary><h4>Frégates & Escorte (<span id="fleet-count-escorte">0</span>)</h4></summary>
+                            <table class="data-table">
+                                <thead><tr><th>Nom</th><th>Type</th><th>Statut</th><th>Âge</th><th>Actions</th></tr></thead>
+                                <tbody id="fleet-table-escorte"></tbody>
+                            </table>
+                        </details>
+                    </details>
+                </div>
+            </div>
+
+            <div id="tab-colonies" class="tab-content">
+                <div class="card">
+                    <h2>Statut Colonial</h2>
+                    <div id="colony-summary">
+                        <details class="collapsible-section-simple" open>
+                            <summary>Pop. Coloniale <strong id="summary-colonie-pop">0</strong></summary>
+                            <p><i>La population coloniale est répartie entre les villes et la "Campagne" (plantations).</i></p>
+                            <table class="data-table-simple">
+                                <tbody>
+                                    <tr><td>Colons (Total)</td><td id="pop-colons-total">0</td></tr>
+                                    <tr><td>Indigènes (Total)</td><td id="pop-indigenes-total">0</td></tr>
+                                    <tr><td>Esclaves (Total)</td><td id="pop-esclaves-total">0</td></tr>
+                                </tbody>
+                            </table>
+                        </details>
+                        <div class="stat-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+                            <div>Hectares Développés <strong id="summary-colonie-hectares">0</strong></div>
+                            <div>Terres Disponibles <strong id="summary-colonie-terres">0</strong></div>
+                            <div>Milices Coloniales <strong id="summary-colonie-milice">0</strong></div>
+                        </div>
+                    </div>
+
+                    <h3>Actions Coloniales Globales</h3>
+                    <div class="action-grid-small">
+                        <button onclick="financerExploration()">Financer Exploration</button>
+                        <button onclick="entrainerMilice('coloniale')">Recruter Milice Coloniale</button>
+                        <button onclick="fonderVilleColonie()">Fonder une Colonie (Hameau)</button>
+                    </div>
+
+                    <h3>Gestion de la Main d'œuvre</h3>
+                    <div class="action-grid-small">
+                        <div class="control-group">
+                            <label>Acheter Esclaves</label>
+                            <input type="number" id="esclaves-input" value="1000" min="0" step="100" oninput="updateSlaveCost()">
+                        </div>
+                        <button onclick="acheterEsclaves()">Acheter (Coût: 400k LT)</button>
+                    </div>
+                    
+                    <details class="collapsible-section" open>
+                        <summary><h3>Villes Coloniales (<span id="colony-city-count">0</span>)</h3></summary>
+                        <table class="data-table">
+                            <thead><tr><th>Nom</th><th>Type</th><th>Colons</th><th>Indigènes</th><th>Esclaves</th><th>Actions</th></tr></thead>
+                            <tbody id="colony-city-table"></tbody>
+                        </table>
+                    </details>
+                    
+                    <details class="collapsible-section">
+                        <summary><h3>Développement des Terres & Envoi de Colons</h3></summary>
+                        <p>Les colons envoyés iront à 10% dans les villes et 90% à la campagne. Les terres défrichées iront à la campagne.</p>
+                        <div class="action-grid-small">
+                            <div class="control-group">
+                                <label>Envoyer Colons</label>
+                                <input type="number" id="colons-input" value="100" min="0">
+                            </div>
+                            <div class="control-group">
+                                <label>Hectares (Campagne)</label>
+                                <input type="number" id="hectares-input" value="250" min="0">
+                            </div>
+                            <div class="control-group">
+                                <label>Type de Culture</label>
+                                <select id="crop-type-select">
+                                    <option value="">-- Choisir --</option>
+                                    <option value="sucre_kg">Sucre</option>
+                                    <option value="cafe_kg">Café</option>
+                                    <option value="epices_kg">Épices</option>
+                                    <option value="tabac_kg">Tabac</option>
+                                    <option value="coton_kg">Coton</option>
+                                    <option value="indigo_kg">Indigo</option>
+                                    <option value="the_kg">Thé</option>
+                                    <option value="ble_kg">Blé</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button onclick="gererColons()">Développer la Campagne</button>
+                    </details>
+                    
+                    <details class="collapsible-section">
+                        <summary><h3>Production Coloniale Totale (Villes + Campagne)</h3></summary>
+                        <table class="data-table">
+                            <thead><tr><th>Bien (Hectares)</th><th>Production (Kg/Pièces)</th><th>Valeur</th></tr></thead>
+                            <tbody id="colonial-production-table"></tbody>
+                        </table>
+                    </details>
+                </div>
+            </div>
+            
+            <div id="tab-commerce" class="tab-content">
+                <div class="card">
+                    <h2>Commerce & Flotte Privée</h2>
+                    <p>Le commerce est géré par le secteur privé. L'État peut l'influencer en finançant des infrastructures qui augmentent la rentabilité et la vitesse de construction de la flotte marchande.</p>
+
+                    <details class="collapsible-section" open>
+                        <summary><h3>Flotte Marchande Privée (Actuelle)</h3></summary>
+                        <p>Cette flotte se construit passivement. Votre objectif est d'accélérer sa croissance via les infrastructures.</p>
+                        <table class="data-table">
+                            <thead><tr><th>Type Navire Marchand</th><th>Nombre</th><th>Puissance Commerciale</th></tr></thead>
+                            <tbody id="merchant-fleet-table">
+                                </tbody>
+                        </table>
+                    </details>
+
+                    <details class="collapsible-section">
+                        <summary><h3>Marché Mondial</h3></summary>
+                        <p>Achetez ou vendez des ressources. Les prix fluctuent en fonction de l'offre et de la demande mondiale.</p>
+                        <div class="action-grid-small" style="grid-template-columns: 2fr 1fr 1fr 1fr;">
+                            <div class="control-group">
+                                <label>Ressource</label>
+                                <select id="market-resource-select" onchange="updateMarketInfo()">
+                                    </select>
+                            </div>
+                            <div class="control-group">
+                                <label>Quantité</label>
+                                <input type="number" id="market-quantity-input" value="100" min="0" oninput="updateMarketInfo()">
+                            </div>
+                            <button id="market-buy-btn" onclick="acheterRessource()">Acheter (Coût: ...)</button>
+                            <button id="market-sell-btn" onclick="vendreRessource()">Vendre (Revenu: ...)</button>
+                        </div>
+                        <p id="market-info-text">Stock Actuel : ... | Prix du Marché : ... LT</p>
+                    </details>
+                    
+                    <details class="collapsible-section" open>
+                        <summary><h3>Infrastructures Commerciales</h3></summary>
+                        <p>Construisez des bâtiments pour soutenir vos marchands.</p>
+                        
+                        <button onclick="ouvrirModalConstruction('commerce_all')">Construire Infrastructure Commerciale</button>
+                        <h4>Bâtiments Actifs</h4>
+                        <table class="data-table">
+                            <thead><tr><th>Nom</th><th>Quantité</th><th>Effet Principal</th></tr></thead>
+                            <tbody id="commerce-buildings-table">
+                                </tbody>
+                        </table>
+                    </details>
+                    
+                    <details class="collapsible-section" open>
+                        <summary><h3>Politiques Commerciales</h3></summary>
+                        <p>Actions uniques pour dynamiser votre commerce national.</p>
+                        <button id="btn-fonder-compagnie" onclick="fonderCompagnieMarchande()">Fonder une Compagnie Marchande (Coût: 5 000 000 LT)</button>
+                        <p style="font-size: 0.9em; color: #666;"><i>(Cette action ne peut être entreprise qu'une seule fois et débloque des bonus commerciaux passifs.)</i></p>
+                    </details>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="card">
+            <h2>Rapport Annuel (Log)</h2>
+            <div id="game-log">
+                <p>Démarrage du système...</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="kriegspiel_engine.js"></script>
+</body>
+</html>

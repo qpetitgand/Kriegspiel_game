@@ -1,0 +1,1929 @@
+{
+  "wellington_1": {
+    "nom_affiche": "Wellington Nord (Côte)",
+    "proprietaire": "wellington",
+    "voisins_terrestres": ["wellington_2", "wellington_3", "charles_quint_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 60000
+  },
+  "wellington_2": {
+    "nom_affiche": "Wellington Nord (Centre)",
+    "proprietaire": "wellington",
+    "voisins_terrestres": ["wellington_1", "wellington_3", "wellington_4", "charles_quint_2"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 58000
+  },
+  "wellington_3": {
+    "nom_affiche": "Wellington Nord (Est)",
+    "proprietaire": "wellington",
+    "voisins_terrestres": ["wellington_1", "wellington_2", "wellington_5", "louis_xiii_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 59000
+  },
+  "wellington_4": {
+    "nom_affiche": "Wellington Nord (Sud)",
+    "proprietaire": "wellington",
+    "voisins_terrestres": ["wellington_2", "wellington_5", "charles_quint_2", "charles_quint_3"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 57000
+  },
+  "wellington_5": {
+    "nom_affiche": "Wellington Nord (Sud-Est)",
+    "proprietaire": "wellington",
+    "voisins_terrestres": ["wellington_3", "wellington_4", "louis_xiii_1", "archiduc_charles_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 55000
+  },
+  "wellington_6": {
+    "nom_affiche": "Wellington Ouest (Nord)",
+    "proprietaire": "wellington",
+    "voisins_terrestres": ["wellington_7", "eugene_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 8, "fort": 15 },
+    "superficie": 59000
+  },
+  "wellington_7": {
+    "nom_affiche": "Wellington Ouest (Sud)",
+    "proprietaire": "wellington",
+    "voisins_terrestres": ["wellington_6", "eugene_1", "gaston_de_foix_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 10, "fort": 18 },
+    "superficie": 61000
+  },
+  "wellington_8": {
+    "nom_affiche": "Wellington Sud (Île)",
+    "proprietaire": "wellington",
+    "voisins_terrestres": [],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 58000
+  },
+  "charles_quint_1": {
+    "nom_affiche": "Charles Quint Ouest",
+    "proprietaire": "charles_quint",
+    "voisins_terrestres": ["wellington_1", "charles_quint_2", "louis_xiii_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 175000
+  },
+  "charles_quint_2": {
+    "nom_affiche": "Charles Quint Centre",
+    "proprietaire": "charles_quint",
+    "voisins_terrestres": ["wellington_2", "wellington_4", "charles_quint_1", "charles_quint_3", "archiduc_charles_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 180000
+  },
+  "charles_quint_3": {
+    "nom_affiche": "Charles Quint Sud",
+    "proprietaire": "charles_quint",
+    "voisins_terrestres": ["wellington_4", "gaston_de_foix_1", "archiduc_charles_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 166840
+  },
+  "louis_xiii_1": {
+    "nom_affiche": "Louis XIII Ouest",
+    "proprietaire": "louis_xiii",
+    "voisins_terrestres": ["wellington_3", "wellington_5", "charles_quint_1", "louis_xiii_2", "archiduc_charles_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 78000
+  },
+  "louis_xiii_2": {
+    "nom_affiche": "Louis XIII Centre-Ouest",
+    "proprietaire": "louis_xiii",
+    "voisins_terrestres": ["louis_xiii_1", "louis_xiii_3", "louis_xiii_5", "archiduc_charles_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 79000
+  },
+  "louis_xiii_3": {
+    "nom_affiche": "Louis XIII Centre",
+    "proprietaire": "louis_xiii",
+    "voisins_terrestres": ["louis_xiii_2", "louis_xiii_4", "louis_xiii_5", "frederic_ii_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 78000
+  },
+  "louis_xiii_4": {
+    "nom_affiche": "Louis XIII Nord",
+    "proprietaire": "louis_xiii",
+    "voisins_terrestres": ["louis_xiii_3", "louis_xiii_5", "nader_shah_1", "frederic_ii_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 77000
+  },
+  "louis_xiii_5": {
+    "nom_affiche": "Louis XIII Interne",
+    "proprietaire": "louis_xiii",
+    "voisins_terrestres": ["louis_xiii_1", "louis_xiii_2", "louis_xiii_3", "louis_xiii_4", "louis_xiii_6"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 79000
+  },
+  "louis_xiii_6": {
+    "nom_affiche": "Louis XIII Sud",
+    "proprietaire": "louis_xiii",
+    "voisins_terrestres": ["louis_xiii_5", "archiduc_charles_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 78000
+  },
+  "louis_xiii_7": {
+    "nom_affiche": "Louis XIII Côte Nord",
+    "proprietaire": "louis_xiii",
+    "voisins_terrestres": ["louis_xiii_4", "nader_shah_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 78000
+  },
+  "louis_xiii_8": {
+    "nom_affiche": "Louis XIII Côte Ouest",
+    "proprietaire": "louis_xiii",
+    "voisins_terrestres": ["wellington_1", "charles_quint_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 78000
+  },
+  "philippe_v_1": {
+    "nom_affiche": "Philippe V Nord",
+    "proprietaire": "philippe_v",
+    "voisins_terrestres": ["philippe_v_2", "philippe_v_3", "eugene_1", "maurice_de_saxe_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 74000
+  },
+  "philippe_v_2": {
+    "nom_affiche": "Philippe V Ouest (Côte)",
+    "proprietaire": "philippe_v",
+    "voisins_terrestres": ["philippe_v_1", "maurice_de_saxe_1"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 73000
+  },
+  "philippe_v_3": {
+    "nom_affiche": "Philippe V Est",
+    "proprietaire": "philippe_v",
+    "voisins_terrestres": ["philippe_v_1", "philippe_v_4", "eugene_1", "gaston_de_foix_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 74000
+  },
+  "philippe_v_4": {
+    "nom_affiche": "Philippe V Sud-Est",
+    "proprietaire": "philippe_v",
+    "voisins_terrestres": ["philippe_v_3", "philippe_v_5", "eugene_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 73000
+  },
+  "philippe_v_5": {
+    "nom_affiche": "Philippe V Sud",
+    "proprietaire": "philippe_v",
+    "voisins_terrestres": ["philippe_v_4", "philippe_v_6", "eugene_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 73000
+  },
+  "philippe_v_6": {
+    "nom_affiche": "Philippe V Sud (Côte)",
+    "proprietaire": "philippe_v",
+    "voisins_terrestres": ["philippe_v_5"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 73000
+  },
+  "maurice_de_saxe_1": {
+    "nom_affiche": "Maurice de Saxe Nord",
+    "proprietaire": "maurice_de_saxe",
+    "voisins_terrestres": ["philippe_v_1", "philippe_v_2", "maurice_de_saxe_2"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 71000
+  },
+  "maurice_de_saxe_2": {
+    "nom_affiche": "Maurice de Saxe Centre",
+    "proprietaire": "maurice_de_saxe",
+    "voisins_terrestres": ["maurice_de_saxe_1", "maurice_de_saxe_3", "maurice_de_saxe_4", "eugene_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 70900
+  },
+  "maurice_de_saxe_3": {
+    "nom_affiche": "Maurice de Saxe Ouest (Côte)",
+    "proprietaire": "maurice_de_saxe",
+    "voisins_terrestres": ["maurice_de_saxe_2"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 71000
+  },
+  "maurice_de_saxe_4": {
+    "nom_affiche": "Maurice de Saxe Sud",
+    "proprietaire": "maurice_de_saxe",
+    "voisins_terrestres": ["maurice_de_saxe_2", "maurice_de_saxe_5", "eugene_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 70900
+  },
+  "maurice_de_saxe_5": {
+    "nom_affiche": "Maurice de Saxe Sud (Côte)",
+    "proprietaire": "maurice_de_saxe",
+    "voisins_terrestres": ["maurice_de_saxe_4"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 70900
+  },
+  "eugene_1": {
+    "nom_affiche": "Eugène Nord",
+    "proprietaire": "eugene_de_savoie",
+    "voisins_terrestres": ["wellington_6", "wellington_7", "gaston_de_foix_1", "philippe_v_1", "philippe_v_3", "philippe_v_4", "eugene_2"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 89000
+  },
+  "eugene_2": {
+    "nom_affiche": "Eugène Centre",
+    "proprietaire": "eugene_de_savoie",
+    "voisins_terrestres": ["eugene_1", "eugene_3", "eugene_4", "philippe_v_4", "philippe_v_5"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 88000
+  },
+  "eugene_3": {
+    "nom_affiche": "Eugène Ouest",
+    "proprietaire": "eugene_de_savoie",
+    "voisins_terrestres": ["eugene_2", "eugene_4", "maurice_de_saxe_2", "maurice_de_saxe_4"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 89000
+  },
+  "eugene_4": {
+    "nom_affiche": "Eugène Sud-Ouest",
+    "proprietaire": "eugene_de_savoie",
+    "voisins_terrestres": ["eugene_2", "eugene_3", "eugene_5"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 88000
+  },
+  "eugene_5": {
+    "nom_affiche": "Eugène Sud (Côte)",
+    "proprietaire": "eugene_de_savoie",
+    "voisins_terrestres": ["eugene_4", "eugene_6", "lannes_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 89000
+  },
+  "eugene_6": {
+    "nom_affiche": "Eugène Sud-Est",
+    "proprietaire": "eugene_de_savoie",
+    "voisins_terrestres": ["eugene_5", "eugene_7", "gaston_de_foix_2", "lannes_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 89000
+  },
+  "eugene_7": {
+    "nom_affiche": "Eugène Est",
+    "proprietaire": "eugene_de_savoie",
+    "voisins_terrestres": ["eugene_1", "eugene_6", "gaston_de_foix_1", "gaston_de_foix_2"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 89000
+  },
+  "eugene_8": {
+    "nom_affiche": "Eugène Interne",
+    "proprietaire": "eugene_de_savoie",
+    "voisins_terrestres": ["eugene_1", "eugene_2", "eugene_3", "eugene_4", "eugene_7"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 90000
+  },
+  "gaston_de_foix_1": {
+    "nom_affiche": "Gaston de Foix Nord",
+    "proprietaire": "gaston_de_foix",
+    "voisins_terrestres": ["wellington_7", "charles_quint_3", "archiduc_charles_1", "eugene_1", "eugene_7", "gaston_de_foix_2"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 91500
+  },
+ "gaston_de_foix_2": {
+    "nom_affiche": "Gaston de Foix Sud",
+    "proprietaire": "gaston_de_foix",
+    "voisins_terrestres": ["gaston_de_foix_1", "gaston_de_foix_3", "eugene_6", "eugene_7", "philippe_ii_1", "guillaume_d_orange_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 91000
+  },
+  "gaston_de_foix_3": {
+    "nom_affiche": "Gaston de Foix Sud (Côte)",
+    "proprietaire": "gaston_de_foix",
+    "voisins_terrestres": ["gaston_de_foix_2"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 91000
+  }, 
+"maurice_de_nassau_1": {
+    "nom_affiche": "Maurice de Nassau (Sud)",
+    "proprietaire": "maurice_de_nassau",
+    "voisins_terrestres": ["maurice_de_nassau_2", "wellington_3"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 80500
+  },
+  "maurice_de_nassau_2": {
+    "nom_affiche": "Maurice de Nassau (Nord)",
+    "proprietaire": "maurice_de_nassau",
+    "voisins_terrestres": ["maurice_de_nassau_1", "louis_xiii_1", "louis_xiii_3"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 80500
+  },
+  "archiduc_charles_1": {
+    "nom_affiche": "Archiduc Charles (Ouest)",
+    "proprietaire": "archiduc_charles",
+    "voisins_terrestres": ["wellington_5", "charles_quint_2", "charles_quint_3", "gaston_de_foix_1", "louis_xiii_2", "louis_xiii_6", "archiduc_charles_2"],
+    "forteresses": { "classe_1": 2, "classe_2": 3, "classe_3_4": 15, "fort": 30 },
+    "superficie": 73000
+  },
+  "archiduc_charles_2": {
+    "nom_affiche": "Archiduc Charles (Centre-Ouest)",
+    "proprietaire": "archiduc_charles",
+    "voisins_terrestres": ["archiduc_charles_1", "archiduc_charles_3", "archiduc_charles_4", "guillaume_d_orange_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 73500
+  },
+  "archiduc_charles_3": {
+    "nom_affiche": "Archiduc Charles (Nord-Ouest)",
+    "proprietaire": "archiduc_charles",
+    "voisins_terrestres": ["louis_xiii_2", "louis_xiii_5", "frederic_ii_1", "archiduc_charles_2", "archiduc_charles_5"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 73000
+  },
+  "archiduc_charles_4": {
+    "nom_affiche": "Archiduc Charles (Frontière Sud)",
+    "proprietaire": "archiduc_charles",
+    "voisins_terrestres": ["archiduc_charles_2", "guillaume_d_orange_1", "philippe_ii_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 74000
+  },
+  "archiduc_charles_5": {
+    "nom_affiche": "Archiduc Charles (Centre-Nord)",
+    "proprietaire": "archiduc_charles",
+    "voisins_terrestres": ["archiduc_charles_3", "archiduc_charles_6", "frederic_ii_1", "frederic_ii_2", "poniatowski_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 73000
+  },
+  "archiduc_charles_6": {
+    "nom_affiche": "Archiduc Charles (Centre-Est)",
+    "proprietaire": "archiduc_charles",
+    "voisins_terrestres": ["archiduc_charles_5", "archiduc_charles_7", "archiduc_charles_8", "poniatowski_1", "philippe_ii_1", "philippe_ii_2"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 73000
+  },
+  "archiduc_charles_7": {
+    "nom_affiche": "Archiduc Charles (Est)",
+    "proprietaire": "archiduc_charles",
+    "voisins_terrestres": ["archiduc_charles_6", "archiduc_charles_8", "poniatowski_1", "poniatowski_2", "guillaume_d_orange_2"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 74000
+  },
+  "archiduc_charles_8": {
+    "nom_affiche": "Archiduc Charles (Frontière Sud-Est)",
+    "proprietaire": "archiduc_charles",
+    "voisins_terrestres": ["archiduc_charles_6", "archiduc_charles_7", "guillaume_d_orange_2", "philippe_ii_2"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 73500
+  },
+  "archiduc_charles_9": {
+    "nom_affiche": "Archiduc Charles (Interne 1)",
+    "proprietaire": "archiduc_charles",
+    "voisins_terrestres": ["archiduc_charles_1", "archiduc_charles_2", "archiduc_charles_3"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 74000
+  },
+  "archiduc_charles_10": {
+    "nom_affiche": "Archiduc Charles (Interne 2)",
+    "proprietaire": "archiduc_charles",
+    "voisins_terrestres": ["archiduc_charles_5", "archiduc_charles_6", "archiduc_charles_7", "archiduc_charles_8"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 73000
+  },
+  "frederic_ii_1": {
+    "nom_affiche": "Frédéric II Ouest",
+    "proprietaire": "frederic_ii",
+    "voisins_terrestres": ["louis_xiii_3", "louis_xiii_4", "archiduc_charles_3", "archiduc_charles_5", "frederic_ii_2"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 66000
+  },
+  "frederic_ii_2": {
+    "nom_affiche": "Frédéric II Est",
+    "proprietaire": "frederic_ii",
+    "voisins_terrestres": ["frederic_ii_1", "archiduc_charles_5", "poniatowski_1", "nader_shah_1", "nader_shah_2"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 66000
+  },
+  "frederic_ii_3": {
+    "nom_affiche": "Frédéric II Nord",
+    "proprietaire": "frederic_ii",
+    "voisins_terrestres": ["louis_xiii_4", "nader_shah_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 66000
+  },
+  "poniatowski_1": {
+    "nom_affiche": "Poniatowski Ouest",
+    "proprietaire": "poniatowski",
+    "voisins_terrestres": ["archiduc_charles_5", "archiduc_charles_6", "archiduc_charles_7", "frederic_ii_2", "poniatowski_2", "poniatowski_3"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 70300
+  },
+  "poniatowski_2": {
+    "nom_affiche": "Poniatowski Sud",
+    "proprietaire": "poniatowski",
+    "voisins_terrestres": ["poniatowski_1", "archiduc_charles_7", "guillaume_d_orange_2", "alexandre_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 70400
+  },
+  "poniatowski_3": {
+    "nom_affiche": "Poniatowski Centre",
+    "proprietaire": "poniatowski",
+    "voisins_terrestres": ["poniatowski_1", "poniatowski_4", "frederic_ii_2", "nader_shah_2", "alexandre_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 70300
+  },
+  "poniatowski_4": {
+    "nom_affiche": "Poniatowski Nord",
+    "proprietaire": "poniatowski",
+    "voisins_terrestres": ["poniatowski_3", "nader_shah_2", "nader_shah_3", "alexandre_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 70400
+  },
+  "poniatowski_5": {
+    "nom_affiche": "Poniatowski (Côte)",
+    "proprietaire": "poniatowski",
+    "voisins_terrestres": ["nader_shah_2", "nader_shah_3"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 70400
+  },
+  "nader_shah_1": {
+    "nom_affiche": "Nader Shah (Côte Ouest)",
+    "proprietaire": "nader_shah",
+    "voisins_terrestres": ["louis_xiii_4", "louis_xiii_7", "frederic_ii_3"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 82000
+  },
+  "nader_shah_2": {
+    "nom_affiche": "Nader Shah Sud",
+    "proprietaire": "nader_shah",
+    "voisins_terrestres": ["frederic_ii_2", "poniatowski_3", "poniatowski_4", "poniatowski_5", "nader_shah_3", "nader_shah_4"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 83000
+  },
+  "nader_shah_3": {
+    "nom_affiche": "Nader Shah (Côte Centre)",
+    "proprietaire": "nader_shah",
+    "voisins_terrestres": ["poniatowski_4", "poniatowski_5", "nader_shah_2", "nader_shah_5"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 82000
+  },
+  "nader_shah_4": {
+    "nom_affiche": "Nader Shah Interne 1",
+    "proprietaire": "nader_shah",
+    "voisins_terrestres": ["nader_shah_2", "nader_shah_5", "nader_shah_6", "nader_shah_7"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 82500
+  },
+  "nader_shah_5": {
+    "nom_affiche": "Nader Shah Interne 2",
+    "proprietaire": "nader_shah",
+    "voisins_terrestres": ["nader_shah_3", "nader_shah_4", "nader_shah_8", "louis_ii_conde_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 82000
+  },
+  "nader_shah_6": {
+    "nom_affiche": "Nader Shah Ouest",
+    "proprietaire": "nader_shah",
+    "voisins_terrestres": ["nader_shah_4", "nader_shah_7", "nader_shah_9", "louis_xiii_4"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 83000
+  },
+  "nader_shah_7": {
+    "nom_affiche": "Nader Shah Interne 3",
+    "proprietaire": "nader_shah",
+    "voisins_terrestres": ["nader_shah_4", "nader_shah_6", "nader_shah_8", "nader_shah_10"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 82000
+  },
+  "nader_shah_8": {
+    "nom_affiche": "Nader Shah Nord",
+    "proprietaire": "nader_shah",
+    "voisins_terrestres": ["nader_shah_5", "nader_shah_7", "nader_shah_10", "louis_ii_conde_1", "louis_ii_conde_2"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 83000
+  },
+  "nader_shah_9": {
+    "nom_affiche": "Nader Shah (Côte Extrême Ouest)",
+    "proprietaire": "nader_shah",
+    "voisins_terrestres": ["nader_shah_6", "louis_xiii_4"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 83000
+  },
+  "nader_shah_10": {
+    "nom_affiche": "Nader Shah Interne 4",
+    "proprietaire": "nader_shah",
+    "voisins_terrestres": ["nader_shah_7", "nader_shah_8", "louis_ii_conde_2"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 82500
+  },
+  "louis_ii_conde_1": {
+    "nom_affiche": "Condé Ouest",
+    "proprietaire": "louis_ii_conde",
+    "voisins_terrestres": ["nader_shah_5", "nader_shah_8", "louis_ii_conde_2", "louis_ii_conde_3"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 80500
+  },
+  "louis_ii_conde_2": {
+    "nom_affiche": "Condé Sud-Ouest",
+    "proprietaire": "louis_ii_conde",
+    "voisins_terrestres": ["nader_shah_8", "nader_shah_10", "louis_ii_conde_1", "louis_ii_conde_4"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 80600
+  },
+  "louis_ii_conde_3": {
+    "nom_affiche": "Condé (Côte Ouest)",
+    "proprietaire": "louis_ii_conde",
+    "voisins_terrestres": ["louis_ii_conde_1", "louis_ii_conde_5"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 80500
+  },
+  "louis_ii_conde_4": {
+    "nom_affiche": "Condé Sud-Est",
+    "proprietaire": "louis_ii_conde",
+    "voisins_terrestres": ["louis_ii_conde_2", "louis_ii_conde_6", "louis_ii_conde_7", "pierre_le_grand_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 80600
+  },
+  "louis_ii_conde_5": {
+    "nom_affiche": "Condé (Côte Nord)",
+    "proprietaire": "louis_ii_conde",
+    "voisins_terrestres": ["louis_ii_conde_3", "louis_ii_conde_8"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 80583
+  },
+  "louis_ii_conde_6": {
+    "nom_affiche": "Condé Est",
+    "proprietaire": "louis_ii_conde",
+    "voisins_terrestres": ["louis_ii_conde_4", "louis_ii_conde_9", "pierre_le_grand_1", "pierre_le_grand_2"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 80600
+  },
+  "louis_ii_conde_7": {
+    "nom_affiche": "Condé Interne",
+    "proprietaire": "louis_ii_conde",
+    "voisins_terrestres": ["louis_ii_conde_1", "louis_ii_conde_4", "louis_ii_conde_8"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 80600
+  },
+  "louis_ii_conde_8": {
+    "nom_affiche": "Condé (Côte Centre)",
+    "proprietaire": "louis_ii_conde",
+    "voisins_terrestres": ["louis_ii_conde_5", "louis_ii_conde_7", "louis_ii_conde_9"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 80600
+  },
+  "louis_ii_conde_9": {
+    "nom_affiche": "Condé (Côte Est)",
+    "proprietaire": "louis_ii_conde",
+    "voisins_terrestres": ["louis_ii_conde_6", "louis_ii_conde_8", "pierre_le_grand_2"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 80747
+  },
+  "louis_ii_conde_10": {
+    "nom_affiche": "Condé Sud",
+    "proprietaire": "louis_ii_conde",
+    "voisins_terrestres": ["louis_ii_conde_1", "louis_ii_conde_2", "louis_ii_conde_4"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 80500
+  },
+  
+  "philippe_ii_1": {
+    "nom_affiche": "Philippe II (Nord)",
+    "proprietaire": "philippe_ii_d_esp",
+    "voisins_terrestres": ["archiduc_charles_4", "archiduc_charles_6", "philippe_ii_2", "philippe_ii_3"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 152500
+  },
+  "philippe_ii_2": {
+    "nom_affiche": "Philippe II (Est)",
+    "proprietaire": "philippe_ii_d_esp",
+    "voisins_terrestres": ["archiduc_charles_6", "archiduc_charles_8", "guillaume_d_orange_2", "philippe_ii_1", "philippe_ii_4"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 152500
+  },
+  "philippe_ii_3": {
+    "nom_affiche": "Philippe II (Ouest)",
+    "proprietaire": "philippe_ii_d_esp",
+    "voisins_terrestres": ["gaston_de_foix_1", "gaston_de_foix_2", "guillaume_d_orange_1", "philippe_ii_1", "philippe_ii_4"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 152500
+  },
+  "philippe_ii_4": {
+    "nom_affiche": "Philippe II (Sud)",
+    "proprietaire": "philippe_ii_d_esp",
+    "voisins_terrestres": ["guillaume_d_orange_1", "guillaume_d_orange_2", "philippe_ii_2", "philippe_ii_3"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 152500
+  },
+  
+  "marlborough_1": {
+    "nom_affiche": "Marlborough (Grande Île Ouest)",
+    "proprietaire": "marlborough",
+    "voisins_terrestres": ["marlborough_2"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 56200
+  },
+  "marlborough_2": {
+    "nom_affiche": "Marlborough (Grande Île Centre)",
+    "proprietaire": "marlborough",
+    "voisins_terrestres": ["marlborough_1", "marlborough_3"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 56300
+  },
+  "marlborough_3": {
+    "nom_affiche": "Marlborough (Grande Île Est)",
+    "proprietaire": "marlborough",
+    "voisins_terrestres": ["marlborough_2", "alexandre_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 56200
+  },
+  "marlborough_4": {
+    "nom_affiche": "Marlborough (Île Est 1)",
+    "proprietaire": "marlborough",
+    "voisins_terrestres": [],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 56300
+  },
+  "marlborough_5": {
+    "nom_affiche": "Marlborough (Île Est 2)",
+    "proprietaire": "marlborough",
+    "voisins_terrestres": [],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 56410
+  },
+"alexandre_1": {
+    "nom_affiche": "Alexandre (Frontière Ouest 1)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["poniatowski_2", "poniatowski_3", "poniatowski_4", "marlborough_3", "alexandre_2", "alexandre_3"],
+    "forteresses": { "classe_1": 2, "classe_2": 3, "classe_3_4": 15, "fort": 30 },
+    "superficie": 140000
+  },
+  "alexandre_2": {
+    "nom_affiche": "Alexandre (Interne Ouest 1)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_1", "alexandre_3", "alexandre_4", "alexandre_5"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 140500
+  },
+  "alexandre_3": {
+    "nom_affiche": "Alexandre (Interne Ouest 2)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_1", "alexandre_2", "alexandre_5", "alexandre_6"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 139000
+  },
+  "alexandre_4": {
+    "nom_affiche": "Alexandre (Frontière Sud 1)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_2", "alexandre_5", "alexandre_10", "soliman_1", "guillaume_d_orange_2"],
+    "forteresses": { "classe_1": 2, "classe_2": 3, "classe_3_4": 15, "fort": 30 },
+    "superficie": 140000
+  },
+  "alexandre_5": {
+    "nom_affiche": "Alexandre (Interne Centre-Ouest)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_2", "alexandre_3", "alexandre_4", "alexandre_6", "alexandre_7", "alexandre_10"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 141000
+  },
+  "alexandre_6": {
+    "nom_affiche": "Alexandre (Interne Nord-Ouest)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_3", "alexandre_5", "alexandre_7", "alexandre_8"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 140000
+  },
+  "alexandre_7": {
+    "nom_affiche": "Alexandre (Frontière Nord 1)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_5", "alexandre_6", "alexandre_8", "alexandre_9", "pierre_le_grand_1", "pierre_le_grand_3"],
+    "forteresses": { "classe_1": 2, "classe_2": 3, "classe_3_4": 15, "fort": 30 },
+    "superficie": 139000
+  },
+  "alexandre_8": {
+    "nom_affiche": "Alexandre (Frontière Nord 2)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_6", "alexandre_7", "alexandre_9", "pierre_le_grand_3", "pierre_le_grand_4"],
+    "forteresses": { "classe_1": 2, "classe_2": 3, "classe_3_4": 15, "fort": 30 },
+    "superficie": 140500
+  },
+  "alexandre_9": {
+    "nom_affiche": "Alexandre (Frontière Nord 3)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_7", "alexandre_8", "alexandre_15", "pierre_le_grand_4", "pierre_le_grand_5"],
+    "forteresses": { "classe_1": 2, "classe_2": 3, "classe_3_4": 15, "fort": 30 },
+    "superficie": 140000
+  },
+  "alexandre_10": {
+    "nom_affiche": "Alexandre (Frontière Sud 2)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_4", "alexandre_5", "alexandre_11", "soliman_1", "soliman_2"],
+    "forteresses": { "classe_1": 2, "classe_2": 3, "classe_3_4": 15, "fort": 30 },
+    "superficie": 141000
+  },
+  "alexandre_11": {
+    "nom_affiche": "Alexandre (Interne Sud)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_10", "alexandre_12", "alexandre_13", "soliman_2"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 139000
+  },
+  "alexandre_12": {
+    "nom_affiche": "Alexandre (Frontière Sud 3)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_11", "alexandre_13", "alexandre_14", "soliman_2", "soliman_3"],
+    "forteresses": { "classe_1": 2, "classe_2": 3, "classe_3_4": 15, "fort": 30 },
+    "superficie": 140000
+  },
+  "alexandre_13": {
+    "nom_affiche": "Alexandre (Interne Centre-Sud)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_11", "alexandre_12", "alexandre_14", "alexandre_15", "alexandre_16"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 140500
+  },
+  "alexandre_14": {
+    "nom_affiche": "Alexandre (Frontière Sud 4)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_12", "alexandre_13", "alexandre_16", "soliman_3"],
+    "forteresses": { "classe_1": 2, "classe_2": 3, "classe_3_4": 15, "fort": 30 },
+    "superficie": 140000
+  },
+  "alexandre_15": {
+    "nom_affiche": "Alexandre (Interne Centre)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_9", "alexandre_13", "alexandre_16", "alexandre_17", "alexandre_18"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 141000
+  },
+  "alexandre_16": {
+    "nom_affiche": "Alexandre (Interne Sud-Est)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_13", "alexandre_14", "alexandre_15", "alexandre_18", "alexandre_20"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 139000
+  },
+  "alexandre_17": {
+    "nom_affiche": "Alexandre (Frontière Nord 4)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_15", "alexandre_18", "alexandre_19", "pierre_le_grand_5", "pierre_le_grand_6"],
+    "forteresses": { "classe_1": 2, "classe_2": 3, "classe_3_4": 15, "fort": 30 },
+    "superficie": 140000
+  },
+  "alexandre_18": {
+    "nom_affiche": "Alexandre (Interne Centre-Nord)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_15", "alexandre_16", "alexandre_17", "alexandre_19", "alexandre_20"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 140500
+  },
+  "alexandre_19": {
+    "nom_affiche": "Alexandre (Frontière Nord 5)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_17", "alexandre_18", "alexandre_22", "pierre_le_grand_6", "pierre_le_grand_7", "charles_xii_1"],
+    "forteresses": { "classe_1": 2, "classe_2": 3, "classe_3_4": 15, "fort": 30 },
+    "superficie": 140000
+  },
+  "alexandre_20": {
+    "nom_affiche": "Alexandre (Frontière Est 1)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_16", "alexandre_18", "alexandre_21", "alexandre_22"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 141000
+  },
+  "alexandre_21": {
+    "nom_affiche": "Alexandre (Frontière Est 2)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_20", "alexandre_22", "alexandre_23"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 139000
+  },
+  "alexandre_22": {
+    "nom_affiche": "Alexandre (Frontière Est 3)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_19", "alexandre_20", "alexandre_21", "alexandre_23", "alexandre_24", "charles_xii_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 140000
+  },
+  "alexandre_23": {
+    "nom_affiche": "Alexandre (Frontière Est 4)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_21", "alexandre_22", "alexandre_24"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 140500
+  },
+  "alexandre_24": {
+    "nom_affiche": "Alexandre (Frontière Est 5)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_22", "alexandre_23", "alexandre_25", "charles_xii_1", "charles_xii_2"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 140000
+  },
+  "alexandre_25": {
+    "nom_affiche": "Alexandre (Frontière Est 6)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_24", "alexandre_26", "alexandre_27", "charles_xii_2"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 141000
+  },
+  "alexandre_26": {
+    "nom_affiche": "Alexandre (Frontière Est 7)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_25", "alexandre_27"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 139000
+  },
+  "alexandre_27": {
+    "nom_affiche": "Alexandre (Frontière Est 8)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_25", "alexandre_26", "alexandre_28", "charles_xii_2", "charles_xii_3"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 140000
+  },
+  "alexandre_28": {
+    "nom_affiche": "Alexandre (Frontière Est 9)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_27", "alexandre_29", "alexandre_30", "charles_xii_3"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 140500
+  },
+  "alexandre_29": {
+    "nom_affiche": "Alexandre (Frontière Est 10)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_28", "alexandre_30"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 140000
+  },
+  "alexandre_30": {
+    "nom_affiche": "Alexandre (Frontière Est 11)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_28", "alexandre_29", "alexandre_31", "charles_xii_3", "charles_xii_4"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 141000
+  },
+  "alexandre_31": {
+    "nom_affiche": "Alexandre (Frontière Est 12)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_30", "alexandre_32", "alexandre_33", "charles_xii_4"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 139000
+  },
+  "alexandre_32": {
+    "nom_affiche": "Alexandre (Frontière Est 13)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_31", "alexandre_33"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 140000
+  },
+  "alexandre_33": {
+    "nom_affiche": "Alexandre (Frontière Est 14)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_31", "alexandre_32", "alexandre_34", "charles_xii_4"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 140500
+  },
+  "alexandre_34": {
+    "nom_affiche": "Alexandre (Frontière Est 15)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_33", "alexandre_35", "alexandre_36", "charles_xii_4"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 140000
+  },
+  "alexandre_35": {
+    "nom_affiche": "Alexandre (Frontière Est 16)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_34", "alexandre_36"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 141000
+  },
+  "alexandre_36": {
+    "nom_affiche": "Alexandre (Frontière Est 17)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_34", "alexandre_35", "alexandre_37", "charles_xii_4", "charles_xii_5"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 139000
+  },
+  "alexandre_37": {
+    "nom_affiche": "Alexandre (Frontière Est 18)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_36", "alexandre_38", "alexandre_39", "charles_xii_5"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 140000
+  },
+  "alexandre_38": {
+    "nom_affiche": "Alexandre (Frontière Est 19)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_37", "alexandre_39"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 140500
+  },
+  "alexandre_39": {
+    "nom_affiche": "Alexandre (Frontière Est 20)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_37", "alexandre_38", "alexandre_40", "charles_xii_5"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 140000
+  },
+  "alexandre_40": {
+    "nom_affiche": "Alexandre (Frontière Est 21)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_39", "alexandre_41", "alexandre_42", "charles_xii_5"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 141000
+  },
+  "alexandre_41": {
+    "nom_affiche": "Alexandre (Frontière Est 22)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_40", "alexandre_42"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 139000
+  },
+  "alexandre_42": {
+    "nom_affiche": "Alexandre (Frontière Est 23)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_40", "alexandre_41", "alexandre_43", "charles_xii_5", "charles_xii_6"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 140000
+  },
+  "alexandre_43": {
+    "nom_affiche": "Alexandre (Frontière Est 24)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_42", "alexandre_44", "alexandre_45", "charles_xii_6"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 140500
+  },
+  "alexandre_44": {
+    "nom_affiche": "Alexandre (Frontière Est 25)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_43", "alexandre_45"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 140000
+  },
+  "alexandre_45": {
+    "nom_affiche": "Alexandre (Frontière Est 26)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_43", "alexandre_44", "alexandre_46", "charles_xii_6"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 141000
+  },
+  "alexandre_46": {
+    "nom_affiche": "Alexandre (Frontière Est 27)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_45", "alexandre_47", "alexandre_48", "charles_xii_6"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 139000
+  },
+  "alexandre_47": {
+    "nom_affiche": "Alexandre (Frontière Est 28)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_46", "alexandre_48"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 140000
+  },
+  "alexandre_48": {
+    "nom_affiche": "Alexandre (Frontière Est 29)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_46", "alexandre_47", "alexandre_49", "charles_xii_6"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 140500
+  },
+  "alexandre_49": {
+    "nom_affiche": "Alexandre (Frontière Est 30)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_48", "alexandre_50", "alexandre_51"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 140000
+  },
+  "alexandre_50": {
+    "nom_affiche": "Alexandre (Frontière Est 31)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_49", "alexandre_51"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 141000
+  },
+  "alexandre_51": {
+    "nom_affiche": "Alexandre (Frontière Est 32)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_49", "alexandre_50", "alexandre_52"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 139000
+  },
+  "alexandre_52": {
+    "nom_affiche": "Alexandre (Frontière Est 33)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_51", "alexandre_53", "alexandre_54"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 140000
+  },
+  "alexandre_53": {
+    "nom_affiche": "Alexandre (Frontière Est 34)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_52", "alexandre_54"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 140500
+  },
+  "alexandre_54": {
+    "nom_affiche": "Alexandre (Frontière Est 35)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_52", "alexandre_53", "alexandre_55"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 140000
+  },
+  "alexandre_55": {
+    "nom_affiche": "Alexandre (Frontière Est 36)",
+    "proprietaire": "alexandre_ier",
+    "voisins_terrestres": ["alexandre_54"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 141363
+  },
+  "pierre_le_grand_1": {
+    "nom_affiche": "Pierre le Grand (Frontière Ouest 1)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["louis_ii_conde_4", "louis_ii_conde_6", "alexandre_7", "pierre_le_grand_3"],
+    "forteresses": { "classe_1": 2, "classe_2": 3, "classe_3_4": 15, "fort": 30 },
+    "superficie": 140000
+  },
+  "pierre_le_grand_2": {
+    "nom_affiche": "Pierre le Grand (Frontière Ouest 2)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["louis_ii_conde_6", "louis_ii_conde_9", "pierre_le_grand_3", "pierre_le_grand_4"],
+    "forteresses": { "classe_1": 2, "classe_2": 3, "classe_3_4": 15, "fort": 30 },
+    "superficie": 139000
+  },
+  "pierre_le_grand_3": {
+    "nom_affiche": "Pierre le Grand (Frontière Sud 1)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_1", "pierre_le_grand_2", "pierre_le_grand_4", "alexandre_7", "alexandre_8"],
+    "forteresses": { "classe_1": 2, "classe_2": 3, "classe_3_4": 15, "fort": 30 },
+    "superficie": 140000
+  },
+  "pierre_le_grand_4": {
+    "nom_affiche": "Pierre le Grand (Frontière Sud 2)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_2", "pierre_le_grand_3", "pierre_le_grand_5", "alexandre_8", "alexandre_9"],
+    "forteresses": { "classe_1": 2, "classe_2": 3, "classe_3_4": 15, "fort": 30 },
+    "superficie": 140500
+  },
+  "pierre_le_grand_5": {
+    "nom_affiche": "Pierre le Grand (Frontière Sud 3)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_4", "pierre_le_grand_6", "alexandre_9", "alexandre_17"],
+    "forteresses": { "classe_1": 2, "classe_2": 3, "classe_3_4": 15, "fort": 30 },
+    "superficie": 139500
+  },
+  "pierre_le_grand_6": {
+    "nom_affiche": "Pierre le Grand (Frontière Sud 4)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_5", "pierre_le_grand_7", "alexandre_17", "alexandre_19"],
+    "forteresses": { "classe_1": 2, "classe_2": 3, "classe_3_4": 15, "fort": 30 },
+    "superficie": 140000
+  },
+  "pierre_le_grand_7": {
+    "nom_affiche": "Pierre le Grand (Frontière Est 1)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_6", "pierre_le_grand_8", "pierre_le_grand_10", "alexandre_19", "charles_xii_1"],
+    "forteresses": { "classe_1": 2, "classe_2": 3, "classe_3_4": 15, "fort": 30 },
+    "superficie": 140000
+  },
+  "pierre_le_grand_8": {
+    "nom_affiche": "Pierre le Grand (Frontière Est 2)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_7", "pierre_le_grand_9", "pierre_le_grand_10"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 139000
+  },
+  "pierre_le_grand_9": {
+    "nom_affiche": "Pierre le Grand (Frontière Est 3)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_8", "pierre_le_grand_10", "pierre_le_grand_11"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 140500
+  },
+  "pierre_le_grand_10": {
+    "nom_affiche": "Pierre le Grand (Interne 1)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_7", "pierre_le_grand_8", "pierre_le_grand_9", "pierre_le_grand_11", "pierre_le_grand_12", "pierre_le_grand_13"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 140000
+  },
+  "pierre_le_grand_11": {
+    "nom_affiche": "Pierre le Grand (Frontière Est 4)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_9", "pierre_le_grand_10", "pierre_le_grand_12"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 139500
+  },
+  "pierre_le_grand_12": {
+    "nom_affiche": "Pierre le Grand (Interne 2)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_10", "pierre_le_grand_11", "pierre_le_grand_13", "pierre_le_grand_14"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 140000
+  },
+  "pierre_le_grand_13": {
+    "nom_affiche": "Pierre le Grand (Interne 3)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_10", "pierre_le_grand_12", "pierre_le_grand_14", "pierre_le_grand_15"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 140000
+  },
+  "pierre_le_grand_14": {
+    "nom_affiche": "Pierre le Grand (Interne 4)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_12", "pierre_le_grand_13", "pierre_le_grand_15", "pierre_le_grand_16"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 139000
+  },
+  "pierre_le_grand_15": {
+    "nom_affiche": "Pierre le Grand (Interne 5)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_13", "pierre_le_grand_14", "pierre_le_grand_16", "pierre_le_grand_17"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 140500
+  },
+  "pierre_le_grand_16": {
+    "nom_affiche": "Pierre le Grand (Interne 6)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_14", "pierre_le_grand_15", "pierre_le_grand_17", "pierre_le_grand_18"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 140000
+  },
+  "pierre_le_grand_17": {
+    "nom_affiche": "Pierre le Grand (Interne 7)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_15", "pierre_le_grand_16", "pierre_le_grand_18", "pierre_le_grand_19"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 139500
+  },
+  "pierre_le_grand_18": {
+    "nom_affiche": "Pierre le Grand (Interne 8)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_16", "pierre_le_grand_17", "pierre_le_grand_19", "pierre_le_grand_20"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 140000
+  },
+  "pierre_le_grand_19": {
+    "nom_affiche": "Pierre le Grand (Interne 9)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_17", "pierre_le_grand_18", "pierre_le_grand_20", "pierre_le_grand_21"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 140000
+  },
+  "pierre_le_grand_20": {
+    "nom_affiche": "Pierre le Grand (Interne 10)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_18", "pierre_le_grand_19", "pierre_le_grand_21", "pierre_le_grand_22"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 139000
+  },
+  "pierre_le_grand_21": {
+    "nom_affiche": "Pierre le Grand (Interne 11)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_19", "pierre_le_grand_20", "pierre_le_grand_22", "pierre_le_grand_23"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 140500
+  },
+  "pierre_le_grand_22": {
+    "nom_affiche": "Pierre le Grand (Interne 12)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_20", "pierre_le_grand_21", "pierre_le_grand_23", "pierre_le_grand_24"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 140000
+  },
+  "pierre_le_grand_23": {
+    "nom_affiche": "Pierre le Grand (Interne 13)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_21", "pierre_le_grand_22", "pierre_le_grand_24", "pierre_le_grand_25"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 139500
+  },
+  "pierre_le_grand_24": {
+    "nom_affiche": "Pierre le Grand (Interne 14)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_22", "pierre_le_grand_23", "pierre_le_grand_25", "pierre_le_grand_26"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 140000
+  },
+  "pierre_le_grand_25": {
+    "nom_affiche": "Pierre le Grand (Interne 15)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_23", "pierre_le_grand_24", "pierre_le_grand_26", "pierre_le_grand_27"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 140000
+  },
+  "pierre_le_grand_26": {
+    "nom_affiche": "Pierre le Grand (Interne 16)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_24", "pierre_le_grand_25", "pierre_le_grand_27", "pierre_le_grand_28"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 139000
+  },
+  "pierre_le_grand_27": {
+    "nom_affiche": "Pierre le Grand (Interne 17)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_25", "pierre_le_grand_26", "pierre_le_grand_28", "pierre_le_grand_29"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 140500
+  },
+  "pierre_le_grand_28": {
+    "nom_affiche": "Pierre le Grand (Interne 18)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_26", "pierre_le_grand_27", "pierre_le_grand_29", "pierre_le_grand_30"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 140000
+  },
+  "pierre_le_grand_29": {
+    "nom_affiche": "Pierre le Grand (Interne 19)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_27", "pierre_le_grand_28", "pierre_le_grand_30", "pierre_le_grand_31"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 139500
+  },
+  "pierre_le_grand_30": {
+    "nom_affiche": "Pierre le Grand (Interne 20)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_28", "pierre_le_grand_29", "pierre_le_grand_31", "pierre_le_grand_32"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 140000
+  },
+  "pierre_le_grand_31": {
+    "nom_affiche": "Pierre le Grand (Interne 21)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_29", "pierre_le_grand_30", "pierre_le_grand_32", "pierre_le_grand_33"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 140000
+  },
+  "pierre_le_grand_32": {
+    "nom_affiche": "Pierre le Grand (Interne 22)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_30", "pierre_le_grand_31", "pierre_le_grand_33", "pierre_le_grand_34"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 139000
+  },
+  "pierre_le_grand_33": {
+    "nom_affiche": "Pierre le Grand (Interne 23)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_31", "pierre_le_grand_32", "pierre_le_grand_34", "pierre_le_grand_35"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 140500
+  },
+  "pierre_le_grand_34": {
+    "nom_affiche": "Pierre le Grand (Interne 24)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_32", "pierre_le_grand_33", "pierre_le_grand_35", "pierre_le_grand_36"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 140000
+  },
+  "pierre_le_grand_35": {
+    "nom_affiche": "Pierre le Grand (Interne 25)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_33", "pierre_le_grand_34", "pierre_le_grand_36", "pierre_le_grand_37"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 139500
+  },
+  "pierre_le_grand_36": {
+    "nom_affiche": "Pierre le Grand (Interne 26)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_34", "pierre_le_grand_35", "pierre_le_grand_37", "pierre_le_grand_38"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 140000
+  },
+  "pierre_le_grand_37": {
+    "nom_affiche": "Pierre le Grand (Interne 27)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_35", "pierre_le_grand_36", "pierre_le_grand_38", "pierre_le_grand_39"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 140000
+  },
+  "pierre_le_grand_38": {
+    "nom_affiche": "Pierre le Grand (Interne 28)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_36", "pierre_le_grand_37", "pierre_le_grand_39", "pierre_le_grand_40"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 139000
+  },
+  "pierre_le_grand_39": {
+    "nom_affiche": "Pierre le Grand (Interne 29)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_37", "pierre_le_grand_38", "pierre_le_grand_40", "pierre_le_grand_41"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 140500
+  },
+  "pierre_le_grand_40": {
+    "nom_affiche": "Pierre le Grand (Interne 30)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_38", "pierre_le_grand_39", "pierre_le_grand_41", "pierre_le_grand_42"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 140000
+  },
+  "pierre_le_grand_41": {
+    "nom_affiche": "Pierre le Grand (Interne 31)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_39", "pierre_le_grand_40", "pierre_le_grand_42"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 139500
+  },
+  "pierre_le_grand_42": {
+    "nom_affiche": "Pierre le Grand (Interne 32)",
+    "proprietaire": "pierre_le_grand",
+    "voisins_terrestres": ["pierre_le_grand_40", "pierre_le_grand_41"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 140857
+  },
+  "charles_xii_1": {
+    "nom_affiche": "Charles XII (Sud-Ouest)",
+    "proprietaire": "charles_xii",
+    "voisins_terrestres": ["pierre_le_grand_7", "alexandre_19", "alexandre_22", "alexandre_24", "charles_xii_2"],
+    "forteresses": { "classe_1": 2, "classe_2": 3, "classe_3_4": 15, "fort": 30 },
+    "superficie": 141000
+  },
+  "charles_xii_2": {
+    "nom_affiche": "Charles XII (Sud-Centre)",
+    "proprietaire": "charles_xii",
+    "voisins_terrestres": ["charles_xii_1", "charles_xii_3", "alexandre_24", "alexandre_25", "alexandre_27"],
+    "forteresses": { "classe_1": 2, "classe_2": 3, "classe_3_4": 15, "fort": 30 },
+    "superficie": 140000
+  },
+  "charles_xii_3": {
+    "nom_affiche": "Charles XII (Sud-Est)",
+    "proprietaire": "charles_xii",
+    "voisins_terrestres": ["charles_xii_2", "charles_xii_4", "alexandre_27", "alexandre_28", "alexandre_30"],
+    "forteresses": { "classe_1": 2, "classe_2": 3, "classe_3_4": 15, "fort": 30 },
+    "superficie": 141000
+  },
+  "charles_xii_4": {
+    "nom_affiche": "Charles XII (Est)",
+    "proprietaire": "charles_xii",
+    "voisins_terrestres": ["charles_xii_3", "charles_xii_5", "alexandre_30", "alexandre_31", "alexandre_33", "alexandre_34", "alexandre_36"],
+    "forteresses": { "classe_1": 2, "classe_2": 3, "classe_3_4": 15, "fort": 30 },
+    "superficie": 140000
+  },
+  "charles_xii_5": {
+    "nom_affiche": "Charles XII (Nord-Est)",
+    "proprietaire": "charles_xii",
+    "voisins_terrestres": ["charles_xii_4", "charles_xii_6", "alexandre_36", "alexandre_37", "alexandre_39", "alexandre_40", "alexandre_42"],
+    "forteresses": { "classe_1": 2, "classe_2": 3, "classe_3_4": 15, "fort": 30 },
+    "superficie": 141000
+  },
+  "charles_xii_6": {
+    "nom_affiche": "Charles XII (Nord)",
+    "proprietaire": "charles_xii",
+    "voisins_terrestres": ["charles_xii_5", "alexandre_42", "alexandre_43", "alexandre_45", "alexandre_46", "alexandre_48"],
+    "forteresses": { "classe_1": 2, "classe_2": 3, "classe_3_4": 15, "fort": 30 },
+    "superficie": 142000
+  }, 
+"guillaume_d_orange_1": {
+    "nom_affiche": "Guillaume d'Orange (Baie Ouest)",
+    "proprietaire": "guillaume_d_orange",
+    "voisins_terrestres": ["archiduc_charles_2", "archiduc_charles_4", "gaston_de_foix_2", "philippe_ii_3", "philippe_ii_4", "soliman_17", "soliman_18"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 58800
+  },
+  "guillaume_d_orange_2": {
+    "nom_affiche": "Guillaume d'Orange (Frontière Est)",
+    "proprietaire": "guillaume_d_orange",
+    "voisins_terrestres": ["archiduc_charles_7", "archiduc_charles_8", "poniatowski_2", "alexandre_1", "alexandre_4", "soliman_1", "philippe_ii_2", "philippe_ii_4", "soliman_18"],
+    "forteresses": { "classe_1": 2, "classe_2": 3, "classe_3_4": 15, "fort": 30 },
+    "superficie": 59000
+  },
+  "guillaume_d_orange_3": {
+    "nom_affiche": "Guillaume d'Orange (Île Mer de Joie)",
+    "proprietaire": "guillaume_d_orange",
+    "voisins_terrestres": [],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 58800
+  },
+  "guillaume_d_orange_4": {
+    "nom_affiche": "Guillaume d'Orange (Île Est 1)",
+    "proprietaire": "guillaume_d_orange",
+    "voisins_terrestres": ["guillaume_d_orange_5"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 58700
+  },
+  "guillaume_d_orange_5": {
+    "nom_affiche": "Guillaume d'Orange (Île Est 2)",
+    "proprietaire": "guillaume_d_orange",
+    "voisins_terrestres": ["guillaume_d_orange_4"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 58700
+  },
+  "soliman_1": {
+    "nom_affiche": "Soliman (Frontière Nord-Ouest)",
+    "proprietaire": "soliman",
+    "voisins_terrestres": ["guillaume_d_orange_2", "alexandre_4", "alexandre_10", "soliman_2"],
+    "forteresses": { "classe_1": 2, "classe_2": 3, "classe_3_4": 15, "fort": 30 },
+    "superficie": 120000
+  },
+  "soliman_2": {
+    "nom_affiche": "Soliman (Frontière Nord)",
+    "proprietaire": "soliman",
+    "voisins_terrestres": ["soliman_1", "soliman_3", "soliman_4", "alexandre_10", "alexandre_11", "alexandre_12"],
+    "forteresses": { "classe_1": 2, "classe_2": 3, "classe_3_4": 15, "fort": 30 },
+    "superficie": 120000
+  },
+  "soliman_3": {
+    "nom_affiche": "Soliman (Frontière Nord-Est)",
+    "proprietaire": "soliman",
+    "voisins_terrestres": ["soliman_2", "soliman_4", "alexandre_12", "alexandre_14"],
+    "forteresses": { "classe_1": 2, "classe_2": 3, "classe_3_4": 15, "fort": 30 },
+    "superficie": 120000
+  },
+  "soliman_4": {
+    "nom_affiche": "Soliman (Interne 1)",
+    "proprietaire": "soliman",
+    "voisins_terrestres": ["soliman_2", "soliman_3", "soliman_5", "soliman_6"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 120000
+  },
+  "soliman_5": {
+    "nom_affiche": "Soliman (Interne 2)",
+    "proprietaire": "soliman",
+    "voisins_terrestres": ["soliman_4", "soliman_6", "soliman_7"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 120000
+  },
+  "soliman_6": {
+    "nom_affiche": "Soliman (Interne 3)",
+    "proprietaire": "soliman",
+    "voisins_terrestres": ["soliman_4", "soliman_5", "soliman_7", "soliman_8"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 120000
+  },
+  "soliman_7": {
+    "nom_affiche": "Soliman (Interne 4)",
+    "proprietaire": "soliman",
+    "voisins_terrestres": ["soliman_5", "soliman_6", "soliman_8", "soliman_9"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 120000
+  },
+  "soliman_8": {
+    "nom_affiche": "Soliman (Interne 5)",
+    "proprietaire": "soliman",
+    "voisins_terrestres": ["soliman_6", "soliman_7", "soliman_9", "soliman_10"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 120000
+  },
+  "soliman_9": {
+    "nom_affiche": "Soliman (Interne 6)",
+    "proprietaire": "soliman",
+    "voisins_terrestres": ["soliman_7", "soliman_8", "soliman_10", "soliman_11"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 120000
+  },
+  "soliman_10": {
+    "nom_affiche": "Soliman (Interne 7)",
+    "proprietaire": "soliman",
+    "voisins_terrestres": ["soliman_8", "soliman_9", "soliman_11", "soliman_12"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 120000
+  },
+  "soliman_11": {
+    "nom_affiche": "Soliman (Interne 8)",
+    "proprietaire": "soliman",
+    "voisins_terrestres": ["soliman_9", "soliman_10", "soliman_12", "soliman_13"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 120000
+  },
+  "soliman_12": {
+    "nom_affiche": "Soliman (Interne 9)",
+    "proprietaire": "soliman",
+    "voisins_terrestres": ["soliman_10", "soliman_11", "soliman_13", "soliman_14"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 120000
+  },
+  "soliman_13": {
+    "nom_affiche": "Soliman (Interne 10)",
+    "proprietaire": "soliman",
+    "voisins_terrestres": ["soliman_11", "soliman_12", "soliman_14", "soliman_15"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 120000
+  },
+  "soliman_14": {
+    "nom_affiche": "Soliman (Interne 11)",
+    "proprietaire": "soliman",
+    "voisins_terrestres": ["soliman_12", "soliman_13", "soliman_15", "soliman_16"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 120000
+  },
+  "soliman_15": {
+    "nom_affiche": "Soliman (Interne 12)",
+    "proprietaire": "soliman",
+    "voisins_terrestres": ["soliman_13", "soliman_14", "soliman_16"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 120000
+  },
+  "soliman_16": {
+    "nom_affiche": "Soliman (Interne 13)",
+    "proprietaire": "soliman",
+    "voisins_terrestres": ["soliman_14", "soliman_15"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 120000
+  },
+  "cromwell_1": {
+    "nom_affiche": "Cromwell (Île Ouest)",
+    "proprietaire": "cromwell",
+    "voisins_terrestres": ["cromwell_2"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 85300
+  },
+  "cromwell_2": {
+    "nom_affiche": "Cromwell (Île Centre)",
+    "proprietaire": "cromwell",
+    "voisins_terrestres": ["cromwell_1", "cromwell_3"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 85300
+  },
+  "cromwell_3": {
+    "nom_affiche": "Cromwell (Île Est)",
+    "proprietaire": "cromwell",
+    "voisins_terrestres": ["cromwell_2"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 85400
+  },
+  "louis_xiv_1": {
+    "nom_affiche": "Louis XIV (Ouest)",
+    "proprietaire": "louis_xiv",
+    "voisins_terrestres": ["louis_xiv_2", "louis_xiv_3"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 81500
+  },
+  "louis_xiv_2": {
+    "nom_affiche": "Louis XIV (Centre)",
+    "proprietaire": "louis_xiv",
+    "voisins_terrestres": ["louis_xiv_1", "louis_xiv_3", "louis_xiv_4", "philippe_d_orleans_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 81600
+  },
+  "louis_xiv_3": {
+    "nom_affiche": "Louis XIV (Interne)",
+    "proprietaire": "louis_xiv",
+    "voisins_terrestres": ["louis_xiv_1", "louis_xiv_2"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 81500
+  },
+  "louis_xiv_4": {
+    "nom_affiche": "Louis XIV (Est)",
+    "proprietaire": "louis_xiv",
+    "voisins_terrestres": ["louis_xiv_2", "philippe_d_orleans_1", "philippe_d_orleans_2"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 81600
+  },
+  "louis_xiv_5": {
+    "nom_affiche": "Louis XIV (Territoire Mer Blanche Ouest)",
+    "proprietaire": "louis_xiv",
+    "voisins_terrestres": ["louis_xiv_6", "philippe_d_orleans_1", "philippe_d_orleans_3"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 81600
+  },
+  "louis_xiv_6": {
+    "nom_affiche": "Louis XIV (Territoire Mer Blanche Centre)",
+    "proprietaire": "louis_xiv",
+    "voisins_terrestres": ["louis_xiv_5", "louis_xiv_7"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 81600
+  },
+  "louis_xiv_7": {
+    "nom_affiche": "Louis XIV (Territoire Mer Blanche Est)",
+    "proprietaire": "louis_xiv",
+    "voisins_terrestres": ["louis_xiv_6"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 81700
+  },
+"lannes_1": {
+    "nom_affiche": "Lannes (Frontière Nord-Est)",
+    "proprietaire": "lannes",
+    "voisins_terrestres": ["eugene_5", "eugene_6", "lannes_2", "soliman_17"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 72700
+  },
+  "lannes_2": {
+    "nom_affiche": "Lannes (Interne 1)",
+    "proprietaire": "lannes",
+    "voisins_terrestres": ["lannes_1", "lannes_3", "lannes_4", "soliman_17", "davout_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 72800
+  },
+  "lannes_3": {
+    "nom_affiche": "Lannes (Côte Ouest)",
+    "proprietaire": "lannes",
+    "voisins_terrestres": ["lannes_2", "lannes_4"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 72700
+  },
+  "lannes_4": {
+    "nom_affiche": "Lannes (Interne 2)",
+    "proprietaire": "lannes",
+    "voisins_terrestres": ["lannes_2", "lannes_3", "lannes_5", "lannes_6", "davout_1", "guillaume_d_orange_6"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 72800
+  },
+  "lannes_5": {
+    "nom_affiche": "Lannes (Côte Sud-Ouest)",
+    "proprietaire": "lannes",
+    "voisins_terrestres": ["lannes_4", "lannes_6"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 72700
+  },
+  "lannes_6": {
+    "nom_affiche": "Lannes (Sud)",
+    "proprietaire": "lannes",
+    "voisins_terrestres": ["lannes_4", "lannes_5", "lannes_7", "guillaume_d_orange_6"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 72800
+  },
+  "lannes_7": {
+    "nom_affiche": "Lannes (Sud-Est)",
+    "proprietaire": "lannes",
+    "voisins_terrestres": ["lannes_6", "guillaume_d_orange_6", "davout_1", "davout_2"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 72700
+  },
+  "lannes_8": {
+    "nom_affiche": "Lannes (Est)",
+    "proprietaire": "lannes",
+    "voisins_terrestres": ["lannes_1", "lannes_2", "davout_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 72800
+  },
+  "lannes_9": {
+    "nom_affiche": "Lannes (Côte Nord)",
+    "proprietaire": "lannes",
+    "voisins_terrestres": ["lannes_1", "eugene_5"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 73000
+  },
+  "guillaume_d_orange_6": {
+    "nom_affiche": "Guillaume d'Orange (Sud)",
+    "proprietaire": "guillaume_d_orange",
+    "voisins_terrestres": ["lannes_4", "lannes_6", "lannes_7", "davout_2"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 58800
+  },
+  "davout_1": {
+    "nom_affiche": "Davout (Nord)",
+    "proprietaire": "davout",
+    "voisins_terrestres": ["lannes_2", "lannes_4", "lannes_7", "lannes_8", "davout_2", "davout_3", "soliman_17"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 78600
+  },
+  "davout_2": {
+    "nom_affiche": "Davout (Ouest)",
+    "proprietaire": "davout",
+    "voisins_terrestres": ["lannes_7", "guillaume_d_orange_6", "davout_1", "davout_3"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 78700
+  },
+  "davout_3": {
+    "nom_affiche": "Davout (Centre)",
+    "proprietaire": "davout",
+    "voisins_terrestres": ["davout_1", "davout_2", "davout_4", "davout_5", "soliman_17", "henri_iv_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 78600
+  },
+  "davout_4": {
+    "nom_affiche": "Davout (Est)",
+    "proprietaire": "davout",
+    "voisins_terrestres": ["davout_3", "soliman_17", "soliman_18"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 78700
+  },
+  "davout_5": {
+    "nom_affiche": "Davout (Sud-Ouest)",
+    "proprietaire": "davout",
+    "voisins_terrestres": ["davout_3", "davout_6", "henri_iv_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 78600
+  },
+  "davout_6": {
+    "nom_affiche": "Davout (Sud)",
+    "proprietaire": "davout",
+    "voisins_terrestres": ["davout_5", "henri_iv_1", "henri_iv_2"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 78800
+  },
+  "henri_iv_1": {
+    "nom_affiche": "Henri IV (Nord)",
+    "proprietaire": "henri_iv",
+    "voisins_terrestres": ["davout_3", "davout_5", "davout_6", "henri_iv_2", "henri_iv_3", "soliman_17", "soliman_18"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 86800
+  },
+  "henri_iv_2": {
+    "nom_affiche": "Henri IV (Côte Ouest)",
+    "proprietaire": "henri_iv",
+    "voisins_terrestres": ["davout_6", "henri_iv_1", "henri_iv_3"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 86800
+  },
+  "henri_iv_3": {
+    "nom_affiche": "Henri IV (Interne 1)",
+    "proprietaire": "henri_iv",
+    "voisins_terrestres": ["henri_iv_1", "henri_iv_2", "henri_iv_4", "henri_iv_5"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 86800
+  },
+  "henri_iv_4": {
+    "nom_affiche": "Henri IV (Interne 2)",
+    "proprietaire": "henri_iv",
+    "voisins_terrestres": ["henri_iv_3", "henri_iv_5", "henri_iv_6"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 86800
+  },
+  "henri_iv_5": {
+    "nom_affiche": "Henri IV (Interne 3)",
+    "proprietaire": "henri_iv",
+    "voisins_terrestres": ["henri_iv_1", "henri_iv_3", "henri_iv_4", "henri_iv_7", "soliman_18", "napoleon_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 86800
+  },
+  "henri_iv_6": {
+    "nom_affiche": "Henri IV (Côte Sud-Ouest)",
+    "proprietaire": "henri_iv",
+    "voisins_terrestres": ["henri_iv_4", "henri_iv_7", "henri_iv_8"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 86800
+  },
+  "henri_iv_7": {
+    "nom_affiche": "Henri IV (Sud)",
+    "proprietaire": "henri_iv",
+    "voisins_terrestres": ["henri_iv_5", "henri_iv_6", "henri_iv_8", "henri_iv_9", "napoleon_1", "napoleon_2"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 86800
+  },
+  "henri_iv_8": {
+    "nom_affiche": "Henri IV (Côte Sud)",
+    "proprietaire": "henri_iv",
+    "voisins_terrestres": ["henri_iv_6", "henri_iv_7"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 86800
+  },
+  "henri_iv_9": {
+    "nom_affiche": "Henri IV (Côte Sud-Est)",
+    "proprietaire": "henri_iv",
+    "voisins_terrestres": ["henri_iv_7", "napoleon_2"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 86800
+  },
+  "henri_iv_10": {
+    "nom_affiche": "Henri IV (Est)",
+    "proprietaire": "henri_iv",
+    "voisins_terrestres": ["henri_iv_1", "henri_iv_5", "soliman_18"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 86800
+  },
+  "soliman_17": {
+    "nom_affiche": "Soliman (Avant-poste Ouest)",
+    "proprietaire": "soliman",
+    "voisins_terrestres": ["lannes_1", "lannes_2", "davout_1", "davout_3", "davout_4", "henri_iv_1", "eugene_6", "eugene_7", "guillaume_d_orange_1"],
+    "forteresses": { "classe_1": 2, "classe_2": 3, "classe_3_4": 15, "fort": 30 },
+    "superficie": 120000
+  },
+  "soliman_18": {
+    "nom_affiche": "Soliman (Avant-poste Est)",
+    "proprietaire": "soliman",
+    "voisins_terrestres": ["davout_4", "henri_iv_1", "henri_iv_5", "henri_iv_10", "napoleon_1", "guillaume_d_orange_1", "guillaume_d_orange_2"],
+    "forteresses": { "classe_1": 2, "classe_2": 3, "classe_3_4": 15, "fort": 30 },
+    "superficie": 120000
+  },
+  "napoleon_1": {
+    "nom_affiche": "Napoléon (Frontière Ouest)",
+    "proprietaire": "napoleon",
+    "voisins_terrestres": ["henri_iv_5", "henri_iv_7", "soliman_18", "napoleon_2", "napoleon_3", "napoleon_4"],
+    "forteresses": { "classe_1": 2, "classe_2": 3, "classe_3_4": 15, "fort": 30 },
+    "superficie": 114400
+  },
+  "napoleon_2": {
+    "nom_affiche": "Napoléon (Côte Sud-Ouest)",
+    "proprietaire": "napoleon",
+    "voisins_terrestres": ["henri_iv_7", "henri_iv_9", "napoleon_1", "napoleon_4"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 114500
+  },
+  "napoleon_3": {
+    "nom_affiche": "Napoléon (Frontière Nord)",
+    "proprietaire": "napoleon",
+    "voisins_terrestres": ["napoleon_1", "napoleon_5", "soliman_18", "guillaume_d_orange_2"],
+    "forteresses": { "classe_1": 2, "classe_2": 3, "classe_3_4": 15, "fort": 30 },
+    "superficie": 114400
+  },
+  "napoleon_4": {
+    "nom_affiche": "Napoléon (Interne 1)",
+    "proprietaire": "napoleon",
+    "voisins_terrestres": ["napoleon_1", "napoleon_2", "napoleon_5", "napoleon_6", "napoleon_7"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 114500
+  },
+  "napoleon_5": {
+    "nom_affiche": "Napoléon (Interne 2)",
+    "proprietaire": "napoleon",
+    "voisins_terrestres": ["napoleon_3", "napoleon_4", "napoleon_7", "napoleon_8"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 114400
+  },
+  "napoleon_6": {
+    "nom_affiche": "Napoléon (Côte Sud)",
+    "proprietaire": "napoleon",
+    "voisins_terrestres": ["napoleon_4", "napoleon_7", "napoleon_10"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 114500
+  },
+  "napoleon_7": {
+    "nom_affiche": "Napoléon (Interne 3)",
+    "proprietaire": "napoleon",
+    "voisins_terrestres": ["napoleon_4", "napoleon_5", "napoleon_6", "napoleon_8", "napoleon_9", "napoleon_10"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 114400
+  },
+  "napoleon_8": {
+    "nom_affiche": "Napoléon (Interne 4)",
+    "proprietaire": "napoleon",
+    "voisins_terrestres": ["napoleon_5", "napoleon_7", "napoleon_9", "napoleon_11", "napoleon_12"],
+    "forteresses": { "classe_1": 0, "classe_2": 0, "classe_3_4": 1, "fort": 2 },
+    "superficie": 114500
+  },
+  "napoleon_9": {
+    "nom_affiche": "Napoléon (Frontière Est)",
+    "proprietaire": "napoleon",
+    "voisins_terrestres": ["napoleon_7", "napoleon_8", "napoleon_10", "napoleon_12", "napoleon_13", "blucher_1", "blucher_2"],
+    "forteresses": { "classe_1": 2, "classe_2": 3, "classe_3_4": 15, "fort": 30 },
+    "superficie": 114400
+  },
+  "napoleon_10": {
+    "nom_affiche": "Napoléon (Côte Sud-Est)",
+    "proprietaire": "napoleon",
+    "voisins_terrestres": ["napoleon_6", "napoleon_7", "napoleon_9", "blucher_1"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 114500
+  },
+  "napoleon_11": {
+    "nom_affiche": "Napoléon (Frontière Nord-Est)",
+    "proprietaire": "napoleon",
+    "voisins_terrestres": ["napoleon_8", "napoleon_12", "philippe_d_orleans_1", "philippe_d_orleans_2"],
+    "forteresses": { "classe_1": 2, "classe_2": 3, "classe_3_4": 15, "fort": 30 },
+    "superficie": 114400
+  },
+  "napoleon_12": {
+    "nom_affiche": "Napoléon (Interne 5)",
+    "proprietaire": "napoleon",
+    "voisins_terrestres": ["napoleon_8", "napoleon_9", "napoleon_11", "napoleon_13", "philippe_d_orleans_2"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 114500
+  },
+  "napoleon_13": {
+    "nom_affiche": "Napoléon (Frontière Est 2)",
+    "proprietaire": "napoleon",
+    "voisins_terrestres": ["napoleon_9", "napoleon_12", "blucher_2", "philippe_d_orleans_2"],
+    "forteresses": { "classe_1": 2, "classe_2": 3, "classe_3_4": 15, "fort": 30 },
+    "superficie": 114400
+  },
+  "napoleon_14": {
+    "nom_affiche": "Napoléon (Côte Est)",
+    "proprietaire": "napoleon",
+    "voisins_terrestres": ["philippe_d_orleans_2"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 114300
+  },
+  "philippe_d_orleans_1": {
+    "nom_affiche": "Philippe d'Orléans (Ouest)",
+    "proprietaire": "philippe_d_orleans",
+    "voisins_terrestres": ["louis_xiv_2", "louis_xiv_4", "louis_xiv_5", "philippe_d_orleans_2", "napoleon_11"],
+    "forteresses": { "classe_1": 1, "classe_2": 2, "classe_3_4": 12, "fort": 25 },
+    "superficie": 91200
+  },
+  "philippe_d_orleans_2": {
+    "nom_affiche": "Philippe d'Orléans (Sud)",
+    "proprietaire": "philippe_d_orleans",
+    "voisins_terrestres": ["louis_xiv_4", "philippe_d_orleans_1", "philippe_d_orleans_3", "philippe_d_orleans_4", "napoleon_11", "napoleon_12", "napoleon_13", "napoleon_14", "blucher_2"],
+    "forteresses": { "classe_1": 2, "classe_2": 3, "classe_3_4": 15, "fort": 30 },
+    "superficie": 91200
+  },
+  "philippe_d_orleans_3": {
+    "nom_affiche": "Philippe d'Orléans (Nord)",
+    "proprietaire": "philippe_d_orleans",
+    "voisins_terrestres": ["louis_xiv_5", "philippe_d_orleans_2", "philippe_d_orleans_4", "philippe_d_orleans_5"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 91200
+  },
+  "philippe_d_orleans_4": {
+    "nom_affiche": "Philippe d'Orléans (Interne)",
+    "proprietaire": "philippe_d_orleans",
+    "voisins_terrestres": ["philippe_d_orleans_2", "philippe_d_orleans_3", "philippe_d_orleans_5", "philippe_d_orleans_6", "blucher_2"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 91200
+  },
+  "philippe_d_orleans_5": {
+    "nom_affiche": "Philippe d'Orléans (Côte Nord-Est)",
+    "proprietaire": "philippe_d_orleans",
+    "voisins_terrestres": ["philippe_d_orleans_3", "philippe_d_orleans_4", "philippe_d_orleans_6"],
+    "forteresses": { "classe_1": 0, "classe_2": 1, "classe_3_4": 4, "fort": 8 },
+    "superficie": 91200
+  },
+  "philippe_d_orleans_6": {
+    "nom_affiche": "Philippe d'Orléans (Côte Est)",
+    "proprietaire": "philippe_d_orleans",
+    "voisins_terrestres": ["philippe_d_orleans_4", "philippe_d_orleans_5", "blucher_2", "blucher_3"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 91200
+  },
+  "blucher_1": {
+    "nom_affiche": "Blücher (Sud)",
+    "proprietaire": "blucher",
+    "voisins_terrestres": ["napoleon_9", "napoleon_10", "blucher_2"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 119800
+  },
+  "blucher_2": {
+    "nom_affiche": "Blücher (Centre)",
+    "proprietaire": "blucher",
+    "voisins_terrestres": ["napoleon_9", "napoleon_13", "philippe_d_orleans_2", "philippe_d_orleans_4", "philippe_d_orleans_6", "blucher_1", "blucher_3"],
+    "forteresses": { "classe_1": 2, "classe_2": 3, "classe_3_4": 15, "fort": 30 },
+    "superficie": 119900
+  },
+  "blucher_3": {
+    "nom_affiche": "Blücher (Nord)",
+    "proprietaire": "blucher",
+    "voisins_terrestres": ["philippe_d_orleans_6", "blucher_2"],
+    "forteresses": { "classe_1": 1, "classe_2": 1, "classe_3_4": 10, "fort": 20 },
+    "superficie": 119901
+  }
+}
